@@ -1,0 +1,1 @@
+page.replace_html 'event-photo-wide', :partial => 'show_informations'

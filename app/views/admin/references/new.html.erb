@@ -1,0 +1,63 @@
+<%= render :partial => "admin/separators/separator_thick" %>
+
+<div id="submenu">
+	<h4 class="title">Création d'une référence</h4>
+	<ul>
+		<li><%= link_to "Retourner à la liste des références", admin_references_path %></li>
+	</ul>
+</div>
+
+<%= render :partial => "admin/separators/separator_thick" %>
+
+<div class="form">
+
+	<% form_for [:admin, @reference], :html => { :method => :post } do |f| %>
+
+		<% unless @reference.errors.empty? and @reference.location.errors.empty? %>
+		<div class="form-errors">
+			Il existe des erreurs dans le formulaire :
+			<ul>
+				<% @reference.errors.each do |attribut, message| %>
+					<li><%= message -%></li>
+				<% end %>
+				<% @reference.location.errors.each do |attribut, message| %>
+					<li><%= message -%></li>
+				<% end %>
+			</ul>
+		</div>
+		<% end %>
+
+		<div class="form-entries">
+			<p><%= f.label :name, 'Nom de la référence :' %><%= f.text_field :name %></p>
+			<p><%= f.label :size, "Superficie (en m<sup>2</sup>) :" %><%= f.text_field :size %></p>
+			<% fields_for @reference.location do |lf| %>
+				<p>	<%= lf.label :name, "Nom de la localisation :" %>	<%= lf.text_field :name %></p>
+				<p><%= lf.label :full_address, "Adresse de la localisation :" %>
+						<%= text_field_with_auto_complete :location, :full_address,
+							{ :size => 30, :autocomplete => "off" }, 
+							{ :url => formatted_geocode_admin_locations_path(:js), :method => :get } %>
+				</p>
+			<% end %>
+			<p>
+				<%= f.label :column_left, 'Colonne de gauche :' -%>
+				<div class="textile"><%= textile_editor 'reference', 'column_left'-%></div>
+			</p>
+			<p>
+				<%= f.label :column_center, 'Colonne du centre :' -%>
+				<div class="textile"><%= textile_editor 'reference', 'column_center'-%></div>
+			</p>
+			<p>
+				<%= f.label :column_right, 'Colonne de droite :' -%>
+				<div class="textile"><%= textile_editor 'reference', 'column_right'-%></div>
+			</p>
+		</div>
+		
+		<div class="form-buttons">
+			<p><%= f.submit "Enregistrer" %></p>
+		</div>
+	
+		<%= textile_editor_initialize -%>
+	
+	<% end %>
+
+</div>

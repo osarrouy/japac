@@ -1,0 +1,44 @@
+8
+
+dir
+6
+http://osarrouy@osarrouy.svn.beanstalkapp.com/japac/trunk/vendor/plugins/attachment_fu/test/fixtures
+http://osarrouy@osarrouy.svn.beanstalkapp.com/japac
+
+
+
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+36042c44-f286-48f0-866c-45e647ba95f2
+
+files
+dir
+
+attachment.rb
+file
+
+
+
+
+2009-03-24T16:22:54.000000Z
+7255964aae6997079306407d820f715f
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+has-props
+

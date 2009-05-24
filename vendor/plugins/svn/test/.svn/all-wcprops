@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/japac/!svn/ver/2/trunk/vendor/plugins/svn/test
+END
+responds_to_parent_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/japac/!svn/ver/2/trunk/vendor/plugins/svn/test/responds_to_parent_test.rb
+END
+assert_select_parent_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/japac/!svn/ver/2/trunk/vendor/plugins/svn/test/assert_select_parent_test.rb
+END

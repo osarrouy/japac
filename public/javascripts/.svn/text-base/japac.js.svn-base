@@ -1,0 +1,19 @@
+function toggleActiveLink(newActiveLink) {	
+	$$('.active').each(function(link) {
+		link.removeClassName('active');	
+	});
+	newActiveLink.toggleClassName('active');	
+}
+
+function changeProjectBackground(event) {
+
+}
+
+function projectsObserver() {
+	Event.observe('bd', 'mouseover', function(event) {
+		element = Event.findElement(event, 'div');
+		alert(element);
+	}, false);
+}
+
+Event.observe('bd', 'load', projectsObserver(), false);

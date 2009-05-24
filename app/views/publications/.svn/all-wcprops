@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/japac/!svn/ver/4/trunk/app/views/publications
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/japac/!svn/ver/2/trunk/app/views/publications/index.html.erb
+END
+_list_item.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/japac/!svn/ver/4/trunk/app/views/publications/_list_item.html.erb
+END
+_list.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/japac/!svn/ver/2/trunk/app/views/publications/_list.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/japac/!svn/ver/2/trunk/app/views/publications/show.html.erb
+END

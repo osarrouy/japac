@@ -1,0 +1,22 @@
+<% event = list_item %>
+<% event_counter = list_item_counter %>
+
+<table class="item <%= event_counter.even? ? 'even' : 'odd' %>">
+	<tr>
+	<% if event_counter.even? %>
+		<td class="item_info">
+			<%= link_to "#{event.name_with_location}<br/>#{event.date.to_formatted_s(:month_and_year)}", event_path(event) -%>
+		</td>
+		<td class="item_photo">
+			<%= link_to(image_tag(event.photos.first.public_filename(:thumb)), event_path(event)) unless event.photos.blank? %>
+		</td>
+	<% else %>
+		<td class="item_photo">
+			<%= link_to(image_tag(event.photos.first.public_filename(:thumb)), event_path(event)) unless event.photos.blank? %>
+		</td>
+		<td class="item_info">
+			<%= link_to "#{event.name_with_location}<br/>#{event.date.to_formatted_s(:month_and_year)}", event_path(event) -%>
+		</td>
+	<% end %>
+	</tr>
+</table>

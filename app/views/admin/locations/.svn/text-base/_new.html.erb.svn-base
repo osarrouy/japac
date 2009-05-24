@@ -1,0 +1,30 @@
+<div class="links">
+		<%= link_to_remote 'Retourner à la liste des villes', :url => admin_cities_path, :method => :get %>
+</div>
+<div class="form">
+
+	<% remote_form_for [:admin, City.new], :method => :post, :loading => "Element.show('spinner');" do |f| -%>
+		
+		<% unless @city.errors.empty? %>
+		<div class="form-errors">
+			Il existe des erreurs dans le formulaire :
+			<ul>
+			  <% @city.errors.each do |attribut, message| %>
+				<li><%= message %></li>
+			  <% end %>
+			</ul>
+		</div>
+		<% end %>
+		
+		<div class="form-entries">
+			<p><%= f.label :name, 'Nom :' %><%= f.text_field :name %></p>
+			<p><%= f.label :department, 'Département :' %><%= f.text_field :department %></p>
+		<div>
+		<%= render :partial => 'admin/separators/separator_thin' %>
+		<div class="form-buttons">
+			<%= image_tag 'spinner.gif', :id => 'spinner', :style => 'display: none' %>
+			<p><%= f.submit "Enregistrer" %></p>
+		</div>
+	<% end %>
+	<%= render :partial => 'admin/separators/separator_thick' %>
+</div>

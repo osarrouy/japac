@@ -1,0 +1,11 @@
+<% publication = list_item %>
+<% publication_counter = list_item_counter %>
+
+<table class="item <%= publication_counter.even? ? 'even' : 'odd' %>">
+	<tr>
+		<td class="item_info">
+			<%= link_to "#{publication.name}, #{publication.date.to_formatted_s(:month_and_year)}<br/>#{publication.description}",
+					publication.public_filename(), :target => "_blank" -%>
+		</td>
+	</tr>
+</table>

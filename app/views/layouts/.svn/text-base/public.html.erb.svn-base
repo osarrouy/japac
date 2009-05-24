@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Bienvenue sur le site de JAPAC</title>
+  	<%= stylesheet_link_tag 'public' %>
+	<%= javascript_include_tag :defaults %>
+	<%= javascript_include_tag 'builder' %>
+	<%= javascript_include_tag 'livepipe' %>
+	<%= javascript_include_tag 'tabs' %>
+	
+</head>
+<body>
+	<table id="content">
+		<tr id="header">
+			<td id="title">
+				<%= link_to(image_tag("logo.png"), :controller => 'index', :action => 'index') %>
+			</td>
+			<td id="hd">
+				<h1><%= @hd_title %></h1>
+			</td>
+		</tr>
+		<tr id="body">
+			<td id="sidebar">
+				<ul id="menu">
+					<li class="frame">
+						<%= link_to 'actualités', events_path %>
+						<div id="menu-events-photos-wrapper">
+							<table class="menu-photos">
+								<tr><td id="menu-events-photos">
+									<% event_photo_init = EventPhoto.random %>
+									<h4><%= event_photo_init.event.city.name %></h4>
+									<%= link_to(image_tag(event_photo_init.public_filename(:small), :alt => ""),
+												event_path(event_photo_init.event)) unless EventPhoto.count == 0 %>
+								</td></tr>	
+							</table>
+						</div>
+						<%= periodically_call_remote(:url => get_random_small_photo_events_path,
+													 :frequency => '10',
+													 :before => update_page do |page|
+													 				page.hide 'menu-events-photos'
+													 			end) %>	
+					</li>
+					<li class="frame">
+						<%= link_to('<h4>REFERENCES</h4>', projects_path) %>
+						<div id="menu-projects-photos-wrapper">
+							<table class="menu-photos">
+								<tr><td id="menu-projects-photos">
+									<% project_photo_init = ProjectPhoto.random %>
+									<h4><%= project_photo_init.project.city.name %></h4>
+									<%= link_to(image_tag(project_photo_init.public_filename(:small), :alt => ""),
+												project_path(project_photo_init.project)) unless ProjectPhoto.count == 0 %>
+								</td></tr>
+							</table>
+						</div>
+						<%= periodically_call_remote(:url => get_random_small_photo_projects_path,
+													 :frequency => '13',
+													 :before => update_page do |page|
+													 				page.hide 'menu-projects-photos'
+													 			end) %>	
+					</li>
+					<li id="publications-link">
+						<%= link_to 'publications', publications_path %>
+					</li>
+					<li id="contacts-link">
+						<%= link_to 'contacts', contact_path %>
+					</li>
+				</ul>
+			</td>
+			<td id="bd" class=<%= (controller.controller_name == "index" && controller.action_name == "index") ? "index" : "generic" %> >
+				<%= yield  %>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

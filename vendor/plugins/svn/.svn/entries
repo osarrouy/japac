@@ -1,0 +1,82 @@
+8
+
+dir
+6
+http://osarrouy@osarrouy.svn.beanstalkapp.com/japac/trunk/vendor/plugins/svn
+http://osarrouy@osarrouy.svn.beanstalkapp.com/japac
+
+
+
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+36042c44-f286-48f0-866c-45e647ba95f2
+
+test
+dir
+
+Rakefile
+file
+
+
+
+
+2009-03-24T16:22:54.000000Z
+8f9479270e6a43be8e401c67a28cb13a
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+
+init.rb
+file
+
+
+
+
+2009-03-24T16:22:54.000000Z
+076c1d6835f36bec43ab9c7af61e3b4b
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+
+lib
+dir
+
+MIT-LICENSE
+file
+
+
+
+
+2009-03-24T16:22:54.000000Z
+d111250f160b7550f3fe10503daefc55
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+
+README
+file
+
+
+
+
+2009-03-24T16:22:54.000000Z
+86cbb5d9d60d91c887f1cc363f1d8d24
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+

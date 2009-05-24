@@ -1,0 +1,26 @@
+<%= link_to_remote 'Modifier', :url => edit_localisation_admin_reference_path(@reference, :js),
+		:method => :get, :update => 'localisation', :html => { :class => "top_links" } %>
+
+<h3>Localisation</h3>
+
+<%= render :partial => "admin/separators/separator_thick", :layout => false %>
+
+<div class="info">
+	<p class="label">Nom de la localisation :</p>
+	<p><%= @reference.location.name -%></p>
+</div>
+
+<div class="info">
+	<p class="label">Adresse complète :</p>
+	<p>
+		<% if @reference.location.full_address.nil? %>
+			Inconnue
+		<% else %>
+			<%= @reference.location.full_address -%>
+		<% end %>
+	</p>
+</div>
+
+	<%= map( [ @reference ], 200) %>
+
+

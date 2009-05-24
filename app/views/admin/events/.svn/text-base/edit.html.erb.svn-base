@@ -1,0 +1,31 @@
+<%= render :partial => 'admin/separators/separator_thick' %>
+<div id="submenu">
+	<h4 class="title">Modification d'une actualité</h4>
+	<ul>
+		<li><%= link_to 'Retourner à la liste des actualités', admin_events_path %>/</li>
+		<li><%= link_to_remote "Ajouter une photo", :url => new_admin_event_event_photo_path(@event), :method => :get %>/</li>
+		<li><%= link_to 'Supprimer', admin_event_path(@event), :method => :delete, :confirm => 'Êtes-vous sûr de vouloir supprimer cette actualité ?' %></li>
+	</ul>
+	<hr class="spacer"/>
+</div>
+<%= render :partial => 'admin/separators/separator_thick' %>
+
+<div id="event-photo-form">
+</div>
+
+<div class="event">
+
+	<div id="event-informations" class="event-informations">
+		<%= render :partial => 'informations' %>
+	</div>
+
+	<%= render :partial => 'admin/separators/separator_thick' %>
+
+	<div id="event-photos-list" class="event-photos-list">
+			<%= render_partial_collection 'admin/event_photos/list_item', @event.event_photos %>
+	</div>
+
+	<iframe id="frame" name="frame" style="display:none"></iframe>
+
+</div>
+

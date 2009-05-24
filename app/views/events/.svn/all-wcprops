@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/japac/!svn/ver/2/trunk/app/views/events
+END
+show_informations.js.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/japac/!svn/ver/2/trunk/app/views/events/show_informations.js.rjs
+END
+_show_informations.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/japac/!svn/ver/2/trunk/app/views/events/_show_informations.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/japac/!svn/ver/2/trunk/app/views/events/index.html.erb
+END
+_list_item.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/japac/!svn/ver/2/trunk/app/views/events/_list_item.html.erb
+END
+_random_medium_photo.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/japac/!svn/ver/2/trunk/app/views/events/_random_medium_photo.html.erb
+END
+get_random_small_photo.js.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/japac/!svn/ver/2/trunk/app/views/events/get_random_small_photo.js.rjs
+END
+_separator.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/japac/!svn/ver/2/trunk/app/views/events/_separator.html.erb
+END
+_random_small_photo.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/japac/!svn/ver/2/trunk/app/views/events/_random_small_photo.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/japac/!svn/ver/2/trunk/app/views/events/show.html.erb
+END

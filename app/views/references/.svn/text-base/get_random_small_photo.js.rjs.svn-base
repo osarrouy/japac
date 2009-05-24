@@ -1,0 +1,2 @@
+page.replace_html 'menu-projects-photos', :partial => 'random_small_photo'
+page.visual_effect :appear, 'menu-projects-photos', :duration => 4

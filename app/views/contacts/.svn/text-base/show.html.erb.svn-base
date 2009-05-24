@@ -1,0 +1,53 @@
+<div id="contacts">
+
+	<div id="descriptions">
+		<p>
+			La vocation du cabinet japac est de se mettre à la disposition des Maîtres d'Ouvrages pour contribuer à la réussite de leurs projets. Pour mener ces missions à bien, l'agence est organisée de manière à assumer toutes les facettes du métier d'architecte dans sa complexité contemporaine.
+		</p>
+	</div>
+	
+	<ul id="contact-tabs" class="tabs">  
+		<li class="tab"><a href="#people">L'équipe japac</a></li>
+		<li class="tab"><a href="#stuff">Le matériel japac</a></li>
+	   	<li class="tab"><a href="#address">Contacts</a></li>
+	</ul>  
+	
+	<div id="people" class="tab-content">
+		<table class="columns">
+			<tr>
+				<td>
+					<%= @contact.team_left %>
+				</td>
+				<td class="center">
+					<%= @contact.team_center %>
+				</td>
+				<td>
+					<%= @contact.team_right %>
+				</td>
+			</tr>
+		</table>		
+	</div>
+	
+	<div id="stuff" class="tab-content">
+		<table class="columns">
+			<tr>
+				<td>
+					<%= @contact.hardware_left %>
+				</td>
+				<td class="center">
+					<%= @contact.hardware_center %>
+				</td>
+				<td>
+					<%= @contact.hardware_right %>
+				</td
+			</tr>
+		</table>
+	</div>
+	
+	<div id="address" class="tab-content">
+		<%= @contact.contact %>
+	</div>
+
+	<script>new Control.Tabs('contact-tabs');</script>
+
+</div>

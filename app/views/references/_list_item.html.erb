@@ -1,0 +1,23 @@
+<% reference = list_item %>
+<% reference_counter = list_item_counter %>
+
+<table class="item <%= reference_counter.even? ? 'even' : 'odd' %>">
+	<tr>
+	<% if reference_counter.even? %>
+		<td class="item_info">
+			<%= link_to reference.name_with_location, reference_path(reference) -%>
+		</td>
+		<td class="item_photo">
+			<%= link_to(image_tag(reference.photos.first.public_filename(:thumb)), reference_path(reference)) unless reference.photos.blank? %>
+		</td>
+	<% else %>
+		<td class="item_photo">
+			<%= link_to(image_tag(reference.photos.first.public_filename(:thumb)), reference_path(reference)) unless reference.photos.blank? %>
+		</td>
+		<td class="item_info">
+			<%= link_to reference.name_with_location, reference_path(reference) -%>
+		</td>
+	<% end %>
+	</tr>
+</table>
+

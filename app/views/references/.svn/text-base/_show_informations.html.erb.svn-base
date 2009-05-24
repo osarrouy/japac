@@ -1,0 +1,13 @@
+<table class="columns">
+	<tr>
+	<td>
+		<%= @project.column_left %>
+	</td>
+	<td class="center">
+		<%= @project.column_center %>
+	</td>
+	<td>
+		<%= @project.column_right %>
+	</td>
+	</tr
+</table>

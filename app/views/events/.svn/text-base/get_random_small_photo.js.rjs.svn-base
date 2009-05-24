@@ -1,0 +1,2 @@
+page.replace_html 'menu-events-photos', :partial => 'random_small_photo'
+page.visual_effect :appear, 'menu-events-photos', :duration => 4

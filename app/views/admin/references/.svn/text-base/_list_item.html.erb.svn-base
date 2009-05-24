@@ -1,0 +1,26 @@
+<% project = list_item %>
+<% project_counter = list_item_counter %>
+
+<div class="<%= project_counter.even? ? 'list-item-even' : 'list-item-odd' %>">
+
+	<div class="project-informations">
+		
+		<h4><%= project.city.name_with_department %>, <%= project.name -%></h4>
+		<h5><%= project.size %> m2</h5>
+		<div class="project-photos-list">
+			<% project.project_photos.each do |photo| %>
+				<%= image_tag(photo.public_filename(:thumb)) %>
+			<% end %>
+			<hr class="spacer"/>
+		</div>
+
+	</div>
+	
+	<div class="links">
+		<%= link_to 'Voir', admin_project_path(project) %> |
+    	<%= link_to 'Modifier', edit_admin_project_path(project) %> |
+    	<%= link_to 'Supprimer', admin_project_path(project), :confirm => 'Êtes-vous sûr de vouloir supprimer ce projet ?',
+															  :method => :delete %>
+	</div>
+
+</div>	

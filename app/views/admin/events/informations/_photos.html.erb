@@ -1,0 +1,10 @@
+<%= link_to_remote 'Ajouter une photo', :url => new_admin_event_photo_path(@event, :js),
+		:method => :get, :update => 'photos', :html => { :class => 'top_links' } -%>
+		
+<h3>Photos</h3>
+
+<%= render :partial => 'admin/separators/separator_thick' %>
+
+<div class="photos_list">
+	<%= render :partial => 'admin/photos/edition_list', :object => @event %>
+</div>

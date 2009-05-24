@@ -1,0 +1,250 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: white;
+	color: #333333;
+	font-family:"Helvetica Neue", Helvetica, Verdana, Serif;
+	font-size: small;
+	margin: auto;
+	width: 860px;
+}
+
+a, a:link, a:visited { 
+	color: #000066;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #646464;
+	text-decoration: none;
+}
+
+img {
+	border: none;
+}
+
+#hd {
+	
+}
+
+#flash {
+	background-color: #999999;
+	color: white;
+	padding: 0.5em 0 0.5em 0;
+	text-align: center;
+	width: 100%;
+}
+
+#menu {
+	padding: 1em 0 1em 0;
+}
+
+#menu ul {
+	font-size: 1.3em;
+	list-style-type : none;
+}
+
+#menu ul .active {
+	border-bottom: 3px solid #cc0000;
+}
+
+#menu ul li { 
+	display : inline;
+	margin: 0 1.5em 0 0;
+}
+
+#menu ul li a {
+	color: #cc0000;
+	margin: 0 1.5em 0 0;
+}
+
+#submenu {
+	padding: 0.5em 0 0.5em 0;
+}
+
+#submenu ul {
+	list-style-type : none;
+}
+
+#submenu ul li { 
+	display : inline;
+	margin: 0 0.5em 0 0;
+
+}
+
+#submenu ul li a {
+	margin: 0 0.5em 0 0;
+}
+
+#submenu .title {
+	float: right;
+	color: #999999;
+}
+
+#logout {
+	font-size: 0.7em;
+	float: right;
+}
+
+#ft {
+	font-size: 0.6em;
+	padding: 0 0 1em 0;
+	text-align: center;
+}
+
+/**************************************************/
+/*************** Generics rendering ***************/
+/**************************************************/
+
+.separator-thin {
+	border: dashed;
+	border-bottom-width: 0;
+	border-left-width: 0;
+	border-right-width: 0;
+	border-top-width: 1px;
+	display: block;
+	height: 1px;
+	margin: 0;
+	padding: 0;
+}
+
+.separator-thick {
+	border: solid;
+	border-bottom-width: 0;
+	border-left-width: 0;
+	border-right-width: 0;
+	border-top-width: 1px;
+	display: block;
+	height: 1px;
+	margin: 0;
+	padding: 0;
+}
+
+.list-item-even {
+	background-color: #ffffff;
+	padding: 0.5em 0 0.5em 0;
+}
+
+.list-item-odd {
+	background-color: #cccccc;
+	padding: 0.5em 0 0.5em 0;
+}
+
+.links {
+	text-align: right;
+	padding: 0 0.5em 0 0;
+}
+
+.columns {
+	margin: 1em 0 1em 0;
+}
+
+.columns .column {
+	margin: 1em 0 0 0;
+}
+
+.columns .column .column-content {
+	margin: 0 0 0 1em;
+}
+
+.spacer {
+	border: 0;     
+	clear: both;
+	display: block;
+	height: 0;     
+	margin: 0;
+	padding: 0;     
+	visibility: hidden; 
+}
+
+#spinner {
+	float: right;
+	margin: 0 1em 0 0;
+}
+
+/**************************************************/
+/*************** Forms rendering ***************/
+/**************************************************/
+
+.form {
+}
+
+.form * {
+	margin: 0.5em 0 0.5em 0;
+}
+
+.form .form-errors {
+	color: red;
+	padding: 0 0 0 25%;
+	border-bottom: 1px dashed #333333;
+}
+
+.form .form-errors ul {
+	padding: 0 0 0 1em;
+}
+
+.form .form-entries label {
+	float: left;
+	padding: 0 0.8em 0 0;
+	text-align: right;
+	width: 25%;
+}
+
+.form .form-entries select option {
+	margin: 0;
+}
+
+.form .form-buttons {
+	padding: 0 0 0 0.5em;
+}
+
+.form .form-buttons input {
+	margin: 0 0.5em 0 0;
+}
+
+.form .fieldWithErrors label {
+	color: red;
+}
+
+/**************************************************/
+/*************** Events rendering ***************/
+/**************************************************/
+
+.event {
+	padding: 1em 0 0 0;
+}
+
+.event-photos-list {
+	padding: 1em 0 1em 0;
+}
+
+.event-photo-content {
+	text-align: center;
+}
+
+/**************************************************/
+/*************** Projects rendering ***************/
+/**************************************************/
+
+.project {
+	padding: 1em 0 0 0;
+}
+
+.project-photos-list {
+	padding: 1em 0 1em 0;
+}
+
+.project-photo-content {
+	text-align: center;
+}
+
+/**************************************************/
+/*************** Login rendering ***************/
+/**************************************************/
+
+#login-form {
+	margin: 5em 0 0 0;
+}

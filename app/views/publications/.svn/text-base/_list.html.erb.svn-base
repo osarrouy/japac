@@ -1,0 +1,6 @@
+<% publications = list %>
+
+<div class="publications-page">	
+	<%= render_partial_collection 'list_item', publications  %>
+	<hr class="spacer"/>
+</div>

@@ -1,0 +1,88 @@
+class Admin::ProjectsController < ApplicationController
+
+  layout 'admin'
+  
+  before_filter :authorize
+
+  # GET /projects
+  def index
+    @projects = Project.find(:all, :include => 'city', :order => "cities.name")
+    
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  # GET /projects/1
+  def show
+    @project = Project.find(params[:id])
+    
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  # GET /projects/new
+  def new
+    @project = Project.new
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  # POST /projects
+  def create
+    @project = Project.new(params[:project])
+
+    respond_to do |format|
+      if @project.save
+        format.html { redirect_to edit_admin_project_url(@project) }
+      else
+        format.html { render :action => "new" }
+      end
+    end
+  end
+
+  # GET /projects/1/edit
+  def edit
+    @project = Project.find(params[:id])
+    
+    respond_to do |format|
+      format.html
+    end
+  end
+  
+  def edit_informations
+    @project = Project.find(params[:id])
+    
+    respond_to do |format|
+      format.js
+    end
+  end
+  
+  # PUT /projects/1
+  def update
+    @project = Project.find(params[:id])
+
+    respond_to do |format|
+      if @project.update_attributes(params[:project])
+        format.js
+      else
+        format.js { render :action => 'edit_informations' }
+      end
+    end
+  end
+
+  # DELETE /projects/1
+  def destroy
+    @project = Project.find(params[:id])
+    
+    @project.destroy
+    flash[:notice] = 'Le projet a été correctement supprimé'
+    respond_to do |format|
+      format.html { redirect_to admin_projects_url }
+    end
+  end
+
+end

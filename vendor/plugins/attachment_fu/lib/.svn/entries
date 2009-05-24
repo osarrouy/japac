@@ -1,0 +1,44 @@
+8
+
+dir
+6
+http://osarrouy@osarrouy.svn.beanstalkapp.com/japac/trunk/vendor/plugins/attachment_fu/lib
+http://osarrouy@osarrouy.svn.beanstalkapp.com/japac
+
+
+
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+36042c44-f286-48f0-866c-45e647ba95f2
+
+technoweenie
+dir
+
+geometry.rb
+file
+
+
+
+
+2009-03-24T16:22:54.000000Z
+cb3efc06a299918af263a8b3ab4804f5
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+has-props
+

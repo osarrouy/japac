@@ -1,0 +1,70 @@
+8
+
+dir
+6
+http://osarrouy@osarrouy.svn.beanstalkapp.com/japac/trunk/vendor/plugins/restful_authentication
+http://osarrouy@osarrouy.svn.beanstalkapp.com/japac
+
+
+
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+36042c44-f286-48f0-866c-45e647ba95f2
+
+Rakefile
+file
+
+
+
+
+2009-03-24T16:22:54.000000Z
+ebfd713e05e35c55392c1999bf3bfb44
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+
+lib
+dir
+
+install.rb
+file
+
+
+
+
+2009-03-24T16:22:54.000000Z
+3773dce53854a282602d79a631a1ff8a
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+
+generators
+dir
+
+README
+file
+
+
+
+
+2009-03-24T16:22:54.000000Z
+55b3f6d8c8e815aaad6c508f9d3540e2
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+

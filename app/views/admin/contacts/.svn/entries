@@ -1,0 +1,52 @@
+8
+
+dir
+6
+http://osarrouy@osarrouy.svn.beanstalkapp.com/japac/trunk/app/views/admin/contacts
+http://osarrouy@osarrouy.svn.beanstalkapp.com/japac
+
+
+
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+36042c44-f286-48f0-866c-45e647ba95f2
+
+edit.html.erb
+file
+
+
+
+
+2009-03-24T16:22:27.000000Z
+794445eb6cc65833072953706d6d1d10
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+
+show.html.erb
+file
+
+
+
+
+2009-03-24T16:22:27.000000Z
+40881705fbe8cd76bf29f579d3b8f56b
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+

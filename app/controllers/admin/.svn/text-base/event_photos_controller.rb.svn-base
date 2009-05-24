@@ -1,0 +1,66 @@
+class Admin::EventPhotosController < ApplicationController
+  
+  layout 'admin'
+  
+  before_filter :authorize
+  
+  def new
+    @event_photo = EventPhoto.new
+    
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def create
+    @event_photo = EventPhoto.new(params[:event_photo])
+  
+    # Can't use rjs templates because of the responds_to_parent function
+    respond_to do |format|
+      if @event_photo.save
+        format.js do
+          responds_to_parent do
+            render :update do |page|
+              page.replace_html 'event-photo-form', ''
+              page.replace_html 'event-photos-list',
+                                :partial => 'list_item',
+                                :collection => @event_photo.event.event_photos
+            end
+          end
+        end
+      else
+        format.js do
+          responds_to_parent do
+            render :update do |page|
+              page.replace_html 'event-photo-form',
+                                :partial => 'new',
+                                :object => Event.find(params[:event_id])
+            end
+          end
+        end
+      end      
+    end
+  end
+
+  def edit
+    @event_photo = EventPhoto.find(params[:id])
+    @event_photo.destroy
+    @event_photo = EventPhoto.new
+    @event = Event.find(params[:event_id])
+    
+    respond_to do |format|
+      format.js { render :action => 'new' }
+    end
+  end
+
+  def destroy
+    @event_photo = EventPhoto.find(params[:id])
+    
+    @event_photo.destroy
+    flash.now[:notice] = 'La photo a été correctement supprimée'
+    respond_to do |format|
+      format.js
+    end
+  end
+
+end

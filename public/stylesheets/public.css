@@ -1,0 +1,348 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a, a:link, a:active {
+	color: #cccccc;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #333333;
+}
+
+a img {
+	border: none;
+}
+
+body {
+	background: #333333 url(../images/background_sidebar.png) repeat-y 0 0;
+	color: 	#cccccc;
+	font-family: "Helvetica Neue", Helvetica, Verdana, Serif;
+	font-size: small;	
+}
+
+.spacer {
+	border: 0;     
+	clear: both;
+	height: 0;
+	margin: 0;
+	padding: 0;
+	visibility: hidden; 
+}
+
+.spacer-div {
+	height: 0;
+	width: 0;
+	clear: both;
+}
+
+/**************************************************/
+/*************** Containers rendering *************/
+/**************************************************/
+	
+#hd {
+	background-color: transparent;
+	border-bottom: 1px solid white;
+	color: #666666;
+	height: 50px;
+	width: 100%;
+}
+
+#hd #logo {
+	background-color: #333333;
+	float: left;
+	height: 50px;
+	width: 168px;
+}
+
+#hd #title {
+	background-color: #cccccc;
+	height: 50px;
+	line-height: 50px;
+	margin: 0 0 0 170px;
+	padding: 0 0 0 1em;
+}
+
+#hd #title h1 {
+	font-size: 1.2em;
+}
+
+#bd #sidebar {
+	background: #333333 url(../images/background_sidebar.png) repeat-y 0 0;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 51px;
+	width: 170px;
+}
+
+#bd #content {
+	background-color: #333333;
+	margin: 0 0 0 170px;
+}
+
+#bd {
+	background-color: transparent;
+	height: 100%;
+	overflow: auto;
+}
+
+#index {
+	background: #333333 url("/images/index_bg.png") no-repeat top right;
+	height: 100%;
+	vertical-align: top;
+}
+
+/**************************************************/
+/***************** Menu rendering *****************/
+/**************************************************/
+
+ul#menu {
+	list-style-type : none;
+	margin: 2em 0 0 0;
+	width: 170px;
+}
+
+ul#menu li {
+	display: block;
+	margin: 0 0 0.5em 0;
+	text-align: left;
+}
+
+ul#menu li.frame {
+	margin: 0;
+}
+
+ul#menu li a.menu_link {
+	background-color: #808080;
+	color: white;
+	display: block;
+	height: 18px;
+	padding: 0 0 0 15px;
+	text-decoration: none;
+	width: 153px;
+}
+
+ul#menu li a.menu_link:hover {
+	background: #808080 url("/images/menu_link_hover.png") no-repeat;
+	color: black;
+}
+
+
+/**************************************************/
+/**************** Sliders rendering ***************/
+/**************************************************/
+
+.slider_wrapper {
+	border: none;
+	height: 170px;
+	margin: auto;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.slider_wrapper tr, .slider_wrapper td {
+	border: none;
+	vertical-align: middle;
+}
+
+.side_slider a {
+}
+
+.side_slider a:hover {
+	color: white;
+}
+
+/**************************************************/
+/***************** Tabs rendering *****************/
+/**************************************************/
+
+.tabs_wrapper {
+	padding: 1em;
+}
+
+.tabs {
+	height:20px;
+	list-style-type:none;
+}
+
+.tabs li.tab {
+	border: 1px solid #808080;
+	border-bottom: 0px none;
+	float: left;
+	margin: 0 7px 0 0;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.tabs li.tab a {
+	background-color: #282828;
+	display: inline-block;
+	height: 19px;
+	line-height: 19px;
+	padding: 0 1.5em;
+}
+
+.tabs li.tab a:hover {
+	color: white;
+}
+
+.tabs li.tab a.active {
+	background-color: #696969;
+	height: 20px;
+}
+
+.tab_content {
+	background-color: #696969;
+	border: 1px solid #808080;
+}
+
+#map {
+	padding: 1em;
+}
+
+/**************************************************/
+/*************** Columns rendering ****************/
+/**************************************************/
+
+.columns {
+	border: none;
+	text-align: left;
+	vertical-align: top;
+	width: 100%;
+}
+
+.columns tr {
+	border: none;
+	width: 100%;
+}
+
+.columns td {
+	border: none;
+	padding: 0 1em 0 1em;
+	width: 33%;
+}
+
+.columns td.center {
+	border: none;
+	border-left: 1px solid #808080;
+	border-right: 1px solid #808080;
+	padding: 0 1em 0 1em;
+	width: 33%;
+}
+
+.columns li {
+	margin: 0 0 0 1.5em;
+}
+
+/**************************************************/
+/********** Projects and Events rendering *********/
+/**************************************************/
+
+.showing_wrapper {
+	padding: 1em 0 1em 0;
+}
+
+#photo_wide_wrapper {
+	position: relative;
+}
+
+#spinner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 99;
+}
+
+#photo_wide {
+	text-align: center;
+}
+
+#photo_wide img {
+	margin: auto;
+}
+
+#photos_list {
+	background-color: #696969;
+	border-bottom: 2px solid #808080;
+	border-top: 2px solid #808080;
+	margin: 1em 0 0 0;	
+}
+
+#photos_list img {
+	background-color: #333333;
+	border: 1px solid #808080;
+	float: left;
+	margin: 0.5em;
+	padding: 3px;
+}
+
+.item {
+	padding: 1em;
+	width: 100%;
+}
+
+.item .item_info {
+	height: 100%;
+	text-align: center;
+	vertical-align: center;
+	width: 75%;
+}
+
+.item .item_photo {
+	height: 100%;
+	text-align: center;
+	vertical-align: center;
+	width: 25%;
+}
+
+.item .item_photo img {
+	background-color: #333333;
+	border: 1px solid #808080;
+	padding: 3px;
+}
+
+.odd {
+	background-color: #787878;
+}
+
+/******************************************************/
+/*************** Publications rendering ***************/
+/******************************************************/
+
+#publications {
+	margin: 0;
+	padding: 1em;
+}
+
+.publication {
+	margin-top: 1em;
+}
+
+
+/**************************************************/
+/*************** Contacts rendering ***************/
+/**************************************************/
+
+#contacts {
+	margin: 0;
+	padding: 1em;
+}
+
+#contact-tabs {
+	margin: 3em 0 0 0;
+}
+
+#contacts p {
+	font-style: italic;
+}
+
+#contacts #address {
+	text-align: center;
+}
+
+#contacts #address p {
+	font-style: normal;
+}

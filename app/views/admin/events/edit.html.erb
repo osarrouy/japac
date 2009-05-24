@@ -1,0 +1,30 @@
+<%= render :partial => 'admin/separators/separator_thick' %>
+
+<div id="submenu">
+	<h4 class="title">Modification d'une actualité</h4>
+	<ul>
+		<li><%= link_to 'Retourner à la liste des actualités', admin_events_path %>/</li>
+		<li><%= link_to 'Supprimer', admin_event_path(@event), :method => :delete, :confirm => 'Êtes-vous sûr de vouloir supprimer cette actualité ?' %></li>
+	</ul>
+</div>
+
+<%= render :partial => 'admin/separators/separator_thick' %>
+
+<div class="event">
+
+	<div id="generic" class="informations">
+		<%= render :partial => 'admin/events/informations/generic' %>
+	</div>
+	
+	<div id="technical" class="informations">
+		<%= render :partial => 'admin/events/informations/technical' %>
+	</div>
+
+	<div id="photos" class="informations">
+		<%= render :partial => 'admin/events/informations/photos' %>
+	</div>
+	
+	<iframe id="frame" name="frame" style="display:none"></iframe>
+
+</div>
+

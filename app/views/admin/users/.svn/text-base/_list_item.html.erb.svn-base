@@ -1,0 +1,13 @@
+<% user = list_item %>
+<% user_counter = list_item_counter %>
+
+<div class="<%= user_counter.even? ? 'list-item-even' : 'list-item-odd' %>">
+	<h4><%= user.login -%></h4>
+	<p><%= user.email -%></p>	
+	
+	<div class="links">
+    	<%= link_to 'Supprimer', admin_user_path(user), :confirm => 'Êtes-vous sûr de vouloir supprimer cet utilisateur ?',
+														:method => :delete %>
+	</div>
+
+</div>

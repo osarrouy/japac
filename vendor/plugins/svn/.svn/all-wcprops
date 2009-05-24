@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/japac/!svn/ver/2/trunk/vendor/plugins/svn
+END
+Rakefile
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/japac/!svn/ver/2/trunk/vendor/plugins/svn/Rakefile
+END
+init.rb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/japac/!svn/ver/2/trunk/vendor/plugins/svn/init.rb
+END
+MIT-LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/japac/!svn/ver/2/trunk/vendor/plugins/svn/MIT-LICENSE
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/japac/!svn/ver/2/trunk/vendor/plugins/svn/README
+END

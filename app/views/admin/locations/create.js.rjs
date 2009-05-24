@@ -1,0 +1,2 @@
+page.replace_html 'city-form', ''
+page.replace_html 'city', :partial => 'cities_list'

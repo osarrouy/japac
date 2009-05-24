@@ -1,0 +1,15 @@
+<% publication = list_item %>
+<% publication_counter = list_item_counter %>
+
+<div class="<%= publication_counter.even?  ? 'list-item-even' : 'list-item-odd' %>">
+	<h4><%= publication.name -%></h4>
+	<p><%= publication.description -%></p>
+	<p><%= publication.date.to_formatted_s(:month_and_year) %></p>
+	<p><%= link_to 'Voir le document', publication.public_filename() %></p>
+	
+	<div class="links">
+    	<%= link_to 'Modifier', edit_admin_publication_path(publication) %> |
+    	<%= link_to 'Supprimer', admin_publication_path(publication), :confirm => 'Êtes-vous sûr de vouloir supprimer cette publication ?', :method => :delete %>
+	</div>
+
+</div>

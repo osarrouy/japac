@@ -1,0 +1,15 @@
+<%= link_to_remote 'Modifier', :url => edit_generic_admin_reference_path(@reference, :js),
+		:method => :get, :update => 'generic', :html => { :class => 'top_links' } %>
+
+<h3>Informations génériques</h3>
+
+<%= render :partial => 'admin/separators/separator_thick' %>
+
+<div class="info">
+	<p class="label">Nom :</p>
+	<p><%= @reference.name -%></p>
+</div>
+<div class="info">
+	<p class="label">Superficie :</p>
+	<p><%= "#{@reference.size} m<sup>2</sup>" -%></p>
+</div>

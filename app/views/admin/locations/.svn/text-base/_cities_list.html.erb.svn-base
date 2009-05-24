@@ -1,0 +1,2 @@
+<%= label_tag 'project_city_id', 'Ville :' %><%= collection_select :project, :city_id, City.find(:all, :order => "name ASC"), :id, :name_with_department %>
+<%= link_to_remote "+", :url => admin_cities_path, :method => :get %>

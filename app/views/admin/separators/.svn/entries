@@ -1,0 +1,52 @@
+8
+
+dir
+6
+http://osarrouy@osarrouy.svn.beanstalkapp.com/japac/trunk/app/views/admin/separators
+http://osarrouy@osarrouy.svn.beanstalkapp.com/japac
+
+
+
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+36042c44-f286-48f0-866c-45e647ba95f2
+
+_separator_thick.html.erb
+file
+
+
+
+
+2009-03-24T16:22:27.000000Z
+17122904154d90859ac11888ee681147
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+
+_separator_thin.html.erb
+file
+
+
+
+
+2009-03-24T16:22:27.000000Z
+0c7f625c2f33fcd6a48367b13bf2c59d
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+

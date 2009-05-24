@@ -1,0 +1,18 @@
+<div class="form">
+	<% form_tag session_path, :html => { :method => :post } do -%>
+		
+		<div class="form-entries">
+			<p><%= label :login, 'Login :' %><%= text_field_tag :login %></p>
+			<p><%= label :password, 'Password :' %><%= password_field_tag :password %></p>
+			<p><%= label :remember_me, 'Remember me:' %><%= check_box_tag 'remember_me' %></p>
+		</div>
+		
+		<%= render :partial => 'admin/separators/separator_thin' %>
+		
+		<div class="form-buttons">
+			<p><%= submit_tag 'Log in' %></p>
+		</div>
+	
+	<% end -%>
+
+</div>

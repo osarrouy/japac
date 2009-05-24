@@ -1,0 +1,36 @@
+<%= render :partial => 'admin/separators/separator_thick' %>
+
+<div id="submenu">
+	<h4 class="title">Modification d'une référence</h4>
+	<ul>
+		<li><%= link_to "Retourner à la liste des référence", admin_references_path -%>/</li>
+		<li><%= link_to "Supprimer cette référence", admin_reference_path(@reference),
+				:method => :delete, :confirm => "Êtes-vous sûr de vouloir supprimer cette référence ?" -%></li>
+	</ul>
+	<hr class="spacer"/>
+</div>
+
+<%= render :partial => 'admin/separators/separator_thick' %>
+
+
+<div class="reference">
+
+	<div id="generic" class="informations">
+		<%= render :partial => 'admin/references/informations/generic' %>
+	</div>
+	
+	<div id="technical" class="informations">
+		<%= render :partial => 'admin/references/informations/technical' %>
+	</div>
+	
+	<div id="localisation" class="informations">
+		<%= render :partial => 'admin/references/informations/localisation' %>
+	</div>
+	
+	<div id="photos" class="informations">
+		<%= render :partial => 'admin/references/informations/photos' %>
+	</div>
+	
+	<iframe id="frame" name="frame" style="display:none"></iframe>
+
+</div>

@@ -1,0 +1,5 @@
+<% attachable = showing_list %>
+
+<% attachable.photos.each do |photo| %>
+	<%= link_to(image_tag(photo.public_filename(:thumb)), photo.public_filename, :class => 'thumb') %>
+<% end %>

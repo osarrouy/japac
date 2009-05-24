@@ -1,0 +1,35 @@
+<%= link_to_remote 'Modifier', :url => edit_generic_admin_event_path(@event, :js),
+		:method => :get, :update => 'generic', :html => { :class => 'top_links' } %>
+
+<h3>Informations génériques</h3>
+
+<%= render :partial => 'admin/separators/separator_thick' %>
+
+<div class="info">
+	<p class="label">Localisation et nom :</p>
+	<p><%= @event.name_with_location -%></p>
+</div>
+<div class="info">
+	<p class="label">Référence rattachée :</p>
+	<p>
+		<% if @event.reference.nil? %>
+			Aucune
+		<% else %> 
+			<%= link_to(@event.reference.name_with_location, edit_admin_reference_path(@event.reference)) -%>
+		<% end %>
+	</p>
+</div>
+<div class="info">
+	<p class="label">Type d'actualité :</p>
+	<p>
+	<% if @event.kind == 'inauguration' %>
+		Inauguration
+	<% elsif @event.kind == 'won_contest' %>
+		Concours gagné
+	<% end %>
+	</p>
+</div>
+<div class="info">
+	<p class="label">Date :</p>
+	<p><%= @event.date.to_formatted_s(:month_and_year) %></p>
+</div>

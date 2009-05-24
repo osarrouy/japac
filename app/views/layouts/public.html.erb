@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="fr">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+	<title>Bienvenue sur le site de JAPAC</title>
+		<%= stylesheet_link_tag 'public' %>
+		<%= javascript_include_tag 'prototype' %>
+		<%= javascript_include_tag 'scriptaculous' %>
+		<%= javascript_include_tag 'ferdinand.slider' %>
+		<%= javascript_include_tag 'livepipe' %>
+		<%= javascript_include_tag 'tabs' %>
+		<%= javascript_include_tag 'pngHack' %>
+		<%= javascript_include_tag 'japac' %>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="hd">
+			<div id="logo">
+				<%= link_to(image_tag("logo.png"), :controller => 'index', :action => 'index') %>
+			</div>
+			<div id="title">
+				<h1><%= @hd_title %></h1>
+			</div>
+		</div>
+	
+		<div id="bd">
+		
+			<div id="sidebar">
+				<ul id="menu">
+					<li class="frame">
+						<%= link_to 'actualités', events_path, :class => "menu_link" %>
+						<table class="slider_wrapper">
+							<tr><td id="events_slider"></td></tr>
+						</table>
+						<%= slider('events_slider', event_medium_photos_path(:js), 8000) %>
+					</li>
+					<li class="frame">
+						<%= link_to "<h4>REFERENCES</h4>", references_path, :class => "menu_link" %>
+						<table class="slider_wrapper">
+							<tr><td id="references_slider"></td></tr>
+						</table>
+						<%= slider('references_slider', reference_medium_photos_path(:js), 11000) %>
+					</li>
+					<li id="publications-link">
+						<%= link_to "publications", publications_path, :class => "menu_link" %>
+					</li>
+					<li id="contacts-link">
+						<%= link_to "contacts", contact_path, :class => "menu_link" %>
+					</li>
+				</ul>
+			</div>
+		
+			<div id="content">
+				<%= yield  %>
+			</div>
+
+		</div>
+	
+	</div>
+</body>
+</html>

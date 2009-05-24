@@ -1,0 +1,22 @@
+<% @hd_title = @event.name_with_location %>
+
+<div class="showing_wrapper">
+	
+	<div id="photo_wide_wrapper">
+		<%= image_tag 'public_spinner.gif', :id => "spinner", :style => "display: none;" %>
+		<div id="photo_wide">
+			<div id="photo_wide_inner">
+				<%= image_tag(@event.photos.first.public_filename, :id => 'photo') unless @event.photos.blank? %>
+			</div>
+		</div>
+	</div>
+
+	<div id="photos_list">
+		<% @event.photos.each do |photo| %>
+			<%= link_to_function image_tag(photo.public_filename(:thumb)), "switchPhoto(#{photo.id})"  %>
+		<% end %>
+		<%= link_to_function image_tag("informations.png"), "switchEventInfo(#{@event.id})" %>
+		<%= spacer %>
+	</div>
+
+</div>

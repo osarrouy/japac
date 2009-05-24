@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/japac/!svn/ver/2/trunk/app/controllers/admin
+END
+publications_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/japac/!svn/ver/2/trunk/app/controllers/admin/publications_controller.rb
+END
+event_photos_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/japac/!svn/ver/2/trunk/app/controllers/admin/event_photos_controller.rb
+END
+contacts_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/japac/!svn/ver/2/trunk/app/controllers/admin/contacts_controller.rb
+END
+cities_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/japac/!svn/ver/2/trunk/app/controllers/admin/cities_controller.rb
+END
+users_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/japac/!svn/ver/2/trunk/app/controllers/admin/users_controller.rb
+END
+project_photos_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/japac/!svn/ver/2/trunk/app/controllers/admin/project_photos_controller.rb
+END
+events_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/japac/!svn/ver/2/trunk/app/controllers/admin/events_controller.rb
+END
+projects_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/japac/!svn/ver/2/trunk/app/controllers/admin/projects_controller.rb
+END

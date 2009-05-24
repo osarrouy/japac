@@ -1,0 +1,29 @@
+<% event = list_item %>
+<% event_counter = list_item_counter %>
+
+<div class="<%= event_counter.even? ? 'list_item_even' : 'list_item_odd' %>">
+	
+	<div class="top_links">
+    	<%= link_to 'Modifier', edit_admin_event_path(event) %> |
+    	<%= link_to 'Supprimer', admin_event_path(event), :method => :delete,
+				:confirm => 'Êtes-vous sûr de vouloir supprimer cette actualité ?' %>
+	</div>
+	
+	<div>
+		<h4><%= event.location_name %>, <%= event.name -%></h4>
+		<h5>
+			<% if event.kind == 'inauguration' %>
+		        Inauguration
+			<% elsif event.kind == 'won_contest' %>
+		        Concours gagné
+			<% end %>
+		</h5>
+		<h5>
+			<%= event.date.to_formatted_s(:month_and_year) %>
+		</h5>
+		<div class="photos_list">
+			<%= render :partial => "admin/photos/showing_list", :object => event %>
+		</div>
+	</div>
+
+</div>

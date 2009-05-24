@@ -1,0 +1,88 @@
+<% @hd_title = "Notre actualité" %>
+
+<table class="index">
+	<tr>
+		<td class="index-list">
+			<ul id="events-tabs" class="tabs">
+				<li class="tab"><a href="#inaugurations">Inaugurations</a></li>
+				<li class="tab"><a href="#won-contests">Concours gagnés</a></li>
+			</ul>
+			<div id="inaugurations" class="tab-content">
+				<div class="events-list">
+					<%= render_partial_collection 'list_item',
+					Event.find_all_by_kind('inauguration', :order => "date DESC"), 'separator' %>
+				</div>
+			</div>
+			<div id="won-contests" class="tab-content">
+				<div class="events-list">
+					<%= render_partial_collection 'list_item',
+					Event.find_all_by_kind('won_contest', :order => "date DESC"), 'separator' %>
+				</div>
+			</div>			
+		</td>
+		<td class="index-photos">
+			<table class="three-lines-photos">
+				<% event_photo_init_1 = EventPhoto.random %>
+				<% event_photo_init_2 = EventPhoto.random %>
+				<% event_photo_init_3 = EventPhoto.random %>
+				<tr class="photo-top">
+					<td id="photo-top">
+						<h4>
+							<%= event_photo_init_1.event.city.name %>
+						</h4>
+						<%= link_to(image_tag(event_photo_init_1.public_filename(:medium)),
+							event_path(event_photo_init_1.event)) unless EventPhoto.count == 0 %>
+					</td>
+				</tr>
+				<tr class="photo-middle">
+					<td id="photo-middle">
+						<h4>
+							<%= event_photo_init_2.event.city.name %>
+						</h4>
+						<%= link_to(image_tag(event_photo_init_2.public_filename(:medium)),
+							event_path(event_photo_init_2.event)) unless EventPhoto.count == 0 %>
+					</td>
+				</tr>
+				<tr class="photo-bottom">
+					<td id="photo-bottom">
+						<h4>
+							<%= event_photo_init_3.event.city.name %>
+						</h4>
+						<%= link_to(image_tag(event_photo_init_3.public_filename(:medium)),
+							event_path(event_photo_init_3.event)) unless EventPhoto.count == 0 %>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<%= javascript_tag "new Control.Tabs('events-tabs')" %>
+
+<%= periodically_call_remote(:url => get_random_medium_photo_events_path,
+									 :frequency => '12',
+									 :before => update_page do |page|
+													page.hide 'photo-top'
+												end,
+									 :update => 'photo-top',
+									 :complete => update_page do |page|
+									 				page.visual_effect :appear, 'photo-top', :duration => 4
+									 			  end) %>
+<%= periodically_call_remote(:url => get_random_medium_photo_events_path,
+							 :frequency => '15',
+							 :before => update_page do |page|
+													page.hide 'photo-middle'
+												end,
+									 :update => 'photo-middle',
+									 :complete => update_page do |page|
+									 				page.visual_effect :appear, 'photo-middle', :duration => 4
+									 			  end)  %>
+<%= periodically_call_remote(:url => get_random_medium_photo_events_path,
+					 		 :frequency => '9',
+					 		 :before => update_page do |page|
+													page.hide 'photo-bottom'
+										end,
+							  :update => 'photo-bottom',
+							  :complete => update_page do |page|
+									 		 page.visual_effect :appear, 'photo-bottom', :duration => 4
+									 	   end) %>	

@@ -1,0 +1,30 @@
+<%= render :partial => 'admin/separators/separator_thick' %>
+<div id="submenu">
+	<h4 class="title">Modification d'un projet</h4>
+	<ul>
+		<li><%= link_to 'Retourner à la liste des projets', admin_projects_path %>/</li>
+		<li><%= link_to_remote "Ajouter une photo", :url => new_admin_project_project_photo_path(@project), :method => :get %>/</li>
+		<li><%= link_to 'Supprimer', admin_project_path(@project), :method => :delete, :confirm => 'Êtes-vous sûr de vouloir supprimer ce projet ?' %></li>
+	</ul>
+	<hr class="spacer"/>
+</div>
+<%= render :partial => 'admin/separators/separator_thick' %>
+
+<div id="project-photo-form">
+</div>
+
+<div class="project">
+
+	<div id="project-informations" class="project-informations">
+		<%= render :partial => 'informations' %>
+	</div>
+	
+	<%= render_partial 'admin/separators/separator_thick' %>
+
+	<div id="project-photos-list" class="project-photos-list">
+			<%= render_partial_collection 'admin/project_photos/list_item', @project.project_photos %>
+	</div>
+
+	<iframe id="frame" name="frame" style="display:none"></iframe>
+
+</div>

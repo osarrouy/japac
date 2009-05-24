@@ -1,0 +1,5 @@
+<% if(@attachable.instance_of? Event) %>
+	<%= render :partial => '/admin/events/edition/photos' %>
+<% elsif(@attachable.instance_of? Reference) %>
+ 	<%= render :partial => '/admin/references/edition/photos' %>
+<% end %>

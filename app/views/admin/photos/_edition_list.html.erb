@@ -1,0 +1,9 @@
+<% attachable = edition_list %>
+
+<% attachable.photos.each do |photo| %>
+	<div>
+		<%= link_to_remote(image_tag("delete.png", :class => "delete_icon"), :url =>  admin_photo_path(photo),
+			:method => :delete,:confirm => 'Êtes-vous sûr de vouloir supprimer cette photo ?', :update => 'photos') %>
+		<%= image_tag photo.public_filename(:thumb) %>
+	</div>
+<% end %>

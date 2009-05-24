@@ -1,0 +1,97 @@
+<% @hd_title = "Nos références" %>
+
+<table class="index">
+	<tr>
+		<td class="index-list">
+			<div class="projects-list">
+				<ul id="project-tabs" class="tabs">  
+					<li class="tab"><a href="#name">Par nom</a></li>
+					<li class="tab"><a href="#surface">Par superficie</a></li>
+					<li class="tab"><a href="#map">Carte</a></li>
+				</ul> 
+				<div id="name" class="tab-content">
+					<table class="columns">
+						<tr>
+							<td>
+								<%= render_partial_collection 'list_item', @projects %>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div id="surface" class="tab-content">
+					 <%= select_tag "size", '<option value="1">Inférieur à 1000m2</option>
+					 						<option value="2">Entre 1000m2 et 2500m2</option>
+					 						<option value="3">Entre 2500m2 et 5000m2</option>
+					 						<option value="4">Supérieur à 5000m2</option>' %>
+					 <%= observe_field 'size',	:update => 'size-list',
+					 							:url => { :controller => 'projects',
+					 									  :action=> 'size_form' },
+					 							:with => "'size=' + escape(value)" %>
+					<div id="size-list">
+					</div>
+				</div>
+				<div id="map" class="tab-content">
+					<a href="/images/map.jpg" target="_blank"><%= image_tag 'map.jpg', :width => '100%' %></a>
+				</div>
+			</div>
+		</td>
+		<script>new Control.Tabs('project-tabs');</script>
+		<td class="index-photos">
+			<table class="three-lines-photos">
+			<% project_photo_init_1 = ProjectPhoto.random %>
+			<% project_photo_init_2 = ProjectPhoto.random %>
+			<% project_photo_init_3 = ProjectPhoto.random %>
+				<tr class="photo-top">
+					<td id="photo-top">
+					<h4>
+						<%= project_photo_init_1.project.city.name %>
+					</h4>
+					<%= link_to(image_tag(project_photo_init_1.public_filename(:medium)), project_path(project_photo_init_1.project)) unless ProjectPhoto.count == 0 %></td>
+				</tr>
+				<tr class="photo-middle">
+					<td id="photo-middle">
+					<h4>
+						<%= project_photo_init_2.project.city.name %>
+					</h4>
+					<%= link_to(image_tag(project_photo_init_2.public_filename(:medium)), project_path(project_photo_init_2.project)) unless ProjectPhoto.count == 0 %></td>
+				</tr>
+				<tr class="photo-bottom">
+					<td id="photo-bottom">
+						<h4>
+							<%= project_photo_init_3.project.city.name %>
+						</h4>
+						<%= link_to(image_tag(project_photo_init_3.public_filename(:medium)), project_path(project_photo_init_3.project)) unless ProjectPhoto.count == 0 %>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>	
+</table>
+
+<%= periodically_call_remote(:url => get_random_medium_photo_projects_path,
+							 :frequency => '13',
+							 :before => update_page do |page|
+											page.hide 'photo-top'
+										end,
+							 :update => 'photo-top',
+							 :complete => update_page do |page|
+									 		 page.visual_effect :appear, 'photo-top', :duration => 4
+									 	  end) %>
+<%= periodically_call_remote(:url => get_random_medium_photo_projects_path,
+					 		 :frequency => '9',
+					 		 :before => update_page do |page|
+										   page.hide 'photo-middle'
+										end,
+							  :update => 'photo-middle',
+							  :complete => update_page do |page|
+									 		 page.visual_effect :appear, 'photo-middle', :duration => 4
+									 	   end) %>
+<%= periodically_call_remote(:url => get_random_medium_photo_projects_path,
+					 		 :frequency => '15',
+					 		 :before => update_page do |page|
+											page.hide 'photo-bottom'
+										end,
+							 :update => 'photo-bottom',
+							 :complete => update_page do |page|
+									 		page.visual_effect :appear, 'photo-bottom', :duration => 4
+									 	  end) %>

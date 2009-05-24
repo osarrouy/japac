@@ -1,0 +1,14 @@
+<%= link_to_remote 'Modifier', :url => edit_technical_admin_event_path(@event, :js),
+		:method => :get, :update => 'technical', :html => { :class => 'top_links' } %>
+
+<h3>Informations techniques</h3>
+
+<%= render :partial => 'admin/separators/separator_thick' %>
+
+<table class="columns">
+	<tr>
+		<td><%= @event.column_left %></td>
+		<td><%= @event.column_center %></td>
+		<td><%= @event.column_right %></td>
+	</tr>
+</table>

@@ -1,0 +1,4 @@
+[{"title":"<%= @photo.attachable.name_with_location %>",
+"image":"<%= @photo.public_filename(:small) %>",
+"url":"<%= reference_path(@photo.attachable) %>"
+}]

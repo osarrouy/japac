@@ -1,0 +1,44 @@
+<% @event = Event.find(@event.id) %>
+
+<div class="attibutes">
+	<h4><%= @event.city.name_with_department %>, <%= @event.name -%></h4>
+	<h5>
+		<% if @event.kind == 'inauguration' %>
+			Inauguration
+		<% elsif @event.kind == 'won_contest' %>
+			Concours gagné
+		<% end %>
+	</h5>
+	<h5>
+		<%= @event.date.to_formatted_s(:month_and_year) %>
+	</h5>
+	<h5>
+		<%= @event.project.name_with_city unless @event.project.nil? %>
+	</h5>
+</div>
+
+<div class="columns">
+	<div class="column">
+		<h4>Colonne de gauche :</h4>
+		<div class="column-content">
+			<%= @event.column_left %>
+		</div>
+	</div>
+	<div class="column">
+		<h4>Colonne du centre :</h4>
+		<div class="column-content">
+			<%= @event.column_center %>
+		</div>
+	</div>
+	<div class="column">
+		<h4>Colonne de droite :</h4>
+		<div class="column-content">
+			<%= @event.column_right %>
+		</div>
+	</div>
+</div>
+
+<div class="links">
+	<%= link_to_remote 'Modifier',	:url => edit_informations_admin_event_path(@event),
+								  	:method => :get %>
+</div>

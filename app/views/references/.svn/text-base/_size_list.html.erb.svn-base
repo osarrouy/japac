@@ -1,0 +1,7 @@
+<% @projects.each do |project| %>
+
+<p class="project-item">
+		<%= link_to project.city.name, { :action => 'show', :id => project.id } -%>
+</p>
+
+<% end %>

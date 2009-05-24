@@ -1,0 +1,14 @@
+<%= render :partial => "admin/separators/separator_thick", :layout => false %>
+
+<div id="submenu">
+	<h4 class="title">Liste des références</h4>
+	<ul>
+		<li><%= link_to 'Nouvelle référence', new_admin_reference_path -%></li>
+	</ul>
+</div>
+
+<%= render :partial => "admin/separators/separator_thick", :layout => false %>
+
+<div>
+	<%= render :partial => 'list_item', :collection => @references  %>
+</div>

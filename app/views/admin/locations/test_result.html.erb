@@ -1,0 +1,42 @@
+<%= @location.lat %>
+<%= @location.lng %>
+<%= @location.full_address %>
+
+<%= @city.lat %>
+<%= @city.lng %>
+<%= @city.full_address %>
+
+<% @cities = City.find(:all) %>
+
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAANnki5pfM3DRXmD3uA5iY9xTJQa0g3IQ9GZqIMmInSLzwtGDKaBR6CsagpbyaNmMDKJ8mKpmwU9Q_BQ&sensor=false"
+          type="text/javascript"></script>
+<script type="text/javascript">
+	function initialize() {
+		if (GBrowserIsCompatible()) {
+			var point;
+			var marker
+			var map = new GMap2(document.getElementById("map_canvas"));
+			map.setCenter(new GLatLng(<%= @location.lat %>, <%= @location.lng %>), 13);
+			
+			<% @cities.each do |city| %>
+				point = new GLatLng(<%= @city.lat %>, <%= city.lng %>);
+				marker = new GMarker(point)
+		      	map.addOverlay(marker);
+				GEvent.addListener(marker, "click", function() {
+				        marker.openInfoWindowHtml("City : <%= city.id %>");
+				});
+			<% end %>
+			map.setUIToDefault();
+		}
+	}
+</script>
+
+
+  <div id="map_canvas" style="width: 500px; height: 300px" onload="initialize()" onunload="GUnload()"></div>
+
+<script>
+	initialize();
+	
+
+	     
+</script>

@@ -1,0 +1,61 @@
+<%= render :partial => 'admin/separators/separator_thick' %>
+<div id="submenu">
+
+	<h4 class="title">Visualisation d'un projet</h4>
+	<ul>
+		<li><%= link_to 'Retourner à la liste des projets', admin_projects_path %>/</li>
+		<li><%= link_to 'Modifier', edit_admin_project_path(@project) %>/</li>
+		<li><%= link_to 'Supprimer', admin_project_path(@project), :method => :delete, :confirm => 'Êtes-vous sûr de vouloir supprimer ce projet ?' %></li>
+	</ul>
+	<hr class="spacer"/>
+</div>
+<%= render :partial => 'admin/separators/separator_thick' %>
+
+<div class="project">
+	
+	<div class="project-informations">
+		
+		<div class="attributes">
+			<h4><%= @project.city.name_with_department %>, <%= @project.name -%></h4>
+			<h5><%= @project.size %> m2</h5>
+		</div>
+	
+		<div class="columns">
+			<div class="column">
+				<h4>
+					Colonne de gauche :
+				</h4>
+				<div class="column-content">
+					<%= @project.column_left %>
+				</div>
+			</div>
+			<div class="column">
+				<h4>
+					Colonne du centre :
+				</h4>
+				<div class="column-content">
+					<%= @project.column_center %>
+				</div>
+			</div>
+			<div class="column">
+				<h4>
+					Colonne de droite :
+				</h4>
+				<div class="column-content">
+					<%= @project.column_right %>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+
+	<%= render :partial => 'admin/separators/separator_thick' %>
+	
+	<div class="project-photos-list">
+		<% @project.project_photos.each do |photo| %>
+			<a href="<%= photo.public_filename %>"><%= image_tag(photo.public_filename(:thumb)) %></a>
+		<% end %>
+		<hr class="spacer"/>
+	</div>
+	
+</div>

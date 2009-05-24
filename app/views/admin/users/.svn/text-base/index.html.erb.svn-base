@@ -1,0 +1,17 @@
+<%= render :partial => 'admin/separators/separator_thick' %>
+<div id="submenu">
+
+	<h4 class="title">Liste des utilisateurs</h4>
+	<ul>
+		<li><%= link_to 'Nouvel utilisateur', new_admin_user_path %></li>
+	</ul>
+	<hr class="spacer">
+
+</div>
+<%= render :partial => 'admin/separators/separator_thick' %>
+
+
+	
+<div id="users-list">
+	<%= render_partial_collection 'list_item', @users  %>
+</div>

@@ -1,0 +1,6 @@
+<% publication = list_item %>
+
+<div class="publication">
+	<p><%= link_to("<b>#{publication.name}</b>", publication.public_filename(), :target => "_blank") %>, <%= publication.date.to_formatted_s(:month_and_year) %></p>
+	<p><%= publication.description %></p>
+</div>

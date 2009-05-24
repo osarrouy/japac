@@ -1,0 +1,14 @@
+<%= render :partial => 'admin/separators/separator_thick' %>
+<div id="submenu">
+	<h4 class="title">Liste des projets</h4>
+	<ul>
+		<li><%= link_to 'Nouveau projet', new_admin_project_path %></li>
+	</ul>
+	<hr class="spacer"/>
+</div>
+<%= render :partial => 'admin/separators/separator_thick' %>
+
+	
+<div id="projects-list">
+	<%= render_partial_collection 'list_item', @projects  %>
+</div>

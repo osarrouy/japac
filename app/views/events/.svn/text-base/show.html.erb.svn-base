@@ -1,0 +1,15 @@
+<% @hd_title = @event.city.name_with_department + ", " + @event.name %>
+
+<div id="event">
+	<div id="event-photo-wide">
+		<%= image_tag @event.event_photos[0].public_filename unless @event.event_photos.blank? %>
+	</div>
+	<div id="event-photos-list">
+		<% @event.event_photos.each do |photo| %>
+			<%= link_to_remote image_tag(photo.public_filename(:thumb)), :url => event_photo_path(photo), :method => :get %>
+		<% end %>
+		<%= link_to_remote image_tag('informations.png'), :url => show_informations_event_path(@event), :method => :get %>
+		<div class="spacer-div"></div>
+	</div>
+	
+</div>

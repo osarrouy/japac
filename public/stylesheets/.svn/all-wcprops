@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/japac/!svn/ver/3/trunk/public/stylesheets
+END
+admin.css
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/japac/!svn/ver/2/trunk/public/stylesheets/admin.css
+END
+public.css
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/japac/!svn/ver/3/trunk/public/stylesheets/public.css
+END
+public_test_2.css
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/japac/!svn/ver/2/trunk/public/stylesheets/public_test_2.css
+END
+lightbox.css
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/japac/!svn/ver/2/trunk/public/stylesheets/lightbox.css
+END
+textile-editor.css
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/japac/!svn/ver/2/trunk/public/stylesheets/textile-editor.css
+END

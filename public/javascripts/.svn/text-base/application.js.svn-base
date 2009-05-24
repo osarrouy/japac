@@ -1,0 +1,7 @@
+function add_photo_form_to_page() {
+	alert("TOTO");
+}
+
+function test() {
+	alert('Toto');
+}

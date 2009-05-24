@@ -1,0 +1,12 @@
+<div class="links">
+		<%= link_to_function 'Annuler' do |page|
+				 	page.replace_html "city-form", ''
+				end %> |
+		<%= link_to_remote 'Nouvelle ville',:url => new_admin_city_path %>
+    	
+</div>
+<%= render :partial => 'admin/separators/separator_thin' %>
+<div>
+	<%= render_partial_collection 'list_item', @cities  %>
+</div>
+<%= render :partial => 'admin/separators/separator_thick' %>

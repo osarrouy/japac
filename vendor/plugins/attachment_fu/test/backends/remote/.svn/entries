@@ -1,0 +1,41 @@
+8
+
+dir
+6
+http://osarrouy@osarrouy.svn.beanstalkapp.com/japac/trunk/vendor/plugins/attachment_fu/test/backends/remote
+http://osarrouy@osarrouy.svn.beanstalkapp.com/japac
+
+
+
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+36042c44-f286-48f0-866c-45e647ba95f2
+
+s3_test.rb
+file
+
+
+
+
+2009-03-24T16:22:54.000000Z
+fb9d4bb28acbdb440d903022eb51fd2c
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+has-props
+

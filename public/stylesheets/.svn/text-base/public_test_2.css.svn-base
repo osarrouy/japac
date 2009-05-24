@@ -1,0 +1,496 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+	margin: 0;
+	color: 	#555555;
+	font-size: small;
+	font-family: "Helvetica Neue",Helvetica,Verdana,Serif;
+	background-color: black;
+	background-image: url("/images/water_pattern.jpg");
+	background-repeat: repeat;
+}
+
+#content {
+	width: 100%;
+	margin: auto;
+	text-align: left;
+}
+
+#bd {
+	float: right;
+	width: 100%;
+}
+
+#sidebar {
+	float: left;
+	width: 180px;
+	height: 100%;
+}
+
+#sidebar #title {
+	text-align: center;
+}
+
+#sidebar #title img {
+	width: 150px;
+}
+
+#menu {
+	width: 100%;
+	margin: 12em 0 0 0;
+	padding: 0;
+}
+
+#menu ul {
+	position: relative;
+	list-style-type : none;
+	margin: 0;
+	padding: 0;
+}
+
+#menu ul li {
+	text-align: left;
+	vertical-align: middle;
+	width: 180px;
+	height: 18px;
+	padding: 0;
+	margin: 0 0 0.5em 0;
+}
+
+#menu ul li.active a {
+	color: #770011;
+}
+
+#menu ul li a {
+	display: block;
+	width: 180px;
+	height: 100%;
+	margin: 0 0 2em 0;
+	padding: 0 0 0 15px;
+	background-color: transparent;
+	text-decoration: none;
+	color: white;
+	font-size: 1em;
+}
+
+#menu ul li a:hover {
+	color: black;
+	text-decoration: none;
+	background-color: transparent;
+	background-image: url("/images/active_link.png");
+	background-repeat: no-repeat;
+}
+
+#ft {
+	text-align: center;
+	font-size: 0.6em;
+}
+
+/**************************************************/
+/*************** Generics rendering ***************/
+/**************************************************/
+
+
+.highlight {
+	background-color: transparent;
+	background-image: url("/images/active_project_background.png");
+	background-repeat: repeat-y;
+}
+
+#spinner {
+	float: right;
+}
+
+.spacer {
+  height: 0;     
+  margin: 0;     
+  padding: 0;     
+  border: 0;     
+  clear: both;     
+  visibility: hidden; 
+}
+
+.separator-thin {
+	border: dashed;
+	border-top-width: 1px;
+	border-bottom-width: 0pt;
+	border-right-width: 0pt;
+	border-left-width: 0pt;
+	margin: 0pt;
+	padding: 0pt;
+}
+
+
+.separator-thin-red {
+	width: 55%;
+	border: dashed;
+	border-color: #770011;
+	border-top-width: 1px;
+	border-bottom-width: 0pt;
+	border-right-width: 0pt;
+	border-left-width: 0pt;
+	margin: 0pt;
+	padding: 0pt;
+}
+
+#main-spinner {
+	width: 100%;
+	text-align: center;
+	position: relative;
+	z-index: 90;
+	left: 0;
+	top: 200px;
+}
+
+a, a:link, a:active {
+	text-decoration: none;
+	color: #dddddd  ;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #dddddd  ;
+}
+
+.pagination {
+	text-align: center;
+	padding: 1em 0 0 0;
+}
+
+/**************************************************/
+/*************** Projects rendering ***************/
+/**************************************************/
+
+/* Project description rendering */
+
+#project {
+	text-align: center;
+	margin: 0;
+	padding: 0 5px 0 5px;
+}
+
+.project-link {
+	display: block;
+}
+
+#project #project-title {
+	width: 100%;
+	text-align: left;
+	font-style: italic;
+	color: #dddddd;
+}
+
+#architectural-description {
+	width: 251.6px;
+	float: left;
+	text-align: left;
+	margin: 0 5px 0 0;
+	padding: 0;
+}
+
+#technical-description {
+	width: 251.6px;
+	float: left;
+	text-align: left;
+	margin: 0 5px 0 0;
+	padding: 0;
+}
+
+#surface-description {
+	width: 251.6px;
+	float: left;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+}
+
+/* Projects list rendering */
+
+#search {
+	margin: 0;
+	padding:  1em 0.5em 1em 0.5em;
+	background-color: transparent;
+	background-image: url("/images/submenu-background.png");
+	background-repeat: repeat-y;
+	
+}
+
+#submenu {
+	margin: 0;
+	padding:  0.5em 0.5em 0.5em 0.5em;
+	background-color: transparent;
+	background-image: url("/images/submenu-background.png");
+	background-repeat: repeat-y;
+}
+
+.previous-project-link {
+	display: block;
+	width: 33.33%;
+	float: left;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+}
+
+.next-project-link {
+	display: block;
+	width: 33.33%;
+	float: left;
+	text-align: right;
+	margin: 0;
+	padding: 0;
+}
+
+.return-to-project-lists-link {
+	display: block;
+	width: 33.33%;
+	float: left;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+#projects-page {
+	width: 100%;
+	border-style: hidden;
+}
+
+#projects-page .project-title {
+	margin: 0;
+	padding: 0.5em 0 0.5em 0;
+}
+
+.list-item-even {
+	margin: 0;
+	padding: 0.5em 0.5em 0.5em 0.5em;
+	width: 100%;
+}
+
+.list-item-odd {
+	margin: 0;
+	padding: 0.5em 0.5em 0.5em 0.5em;
+	width: 100%;
+}
+
+#project-title {
+	margin: 0.5em 0 0.5em 0;
+}
+
+.project-photos {
+	margin: 0;
+	padding: 0.5em 0 0.5em 0;
+}
+
+.project-photos .thumbnail {
+	background-color: #222222;
+	border: 1px solid #2a2a2a;
+	float: left;
+	margin: 0 0.5em 0 0;
+	padding: 0.2em 0.2em 0.2em 0.2em;
+}
+
+/* Project photos carousel rendering */
+
+#project-scroller{
+    width: 600px;
+    height: 500px;
+	clear: both;
+    overflow: hidden;
+	margin: 1em auto 0 auto;
+	text-align: center;
+}
+
+#project-scroller-content {
+	width: 2500px;
+	margin: auto;
+}
+
+.project-slide {
+	    float: left;
+	    width: 750px;
+}
+
+#scroller {
+    width: 750px;
+	clear: both;
+    overflow: hidden;
+	margin: 1em auto 0 auto;
+	text-align: center;
+}
+
+#scroller-content {
+    width: 2500px;
+	margin: auto;
+}
+
+#horizontal_carousel {
+	/*float: left;*/
+	margin: auto;
+	padding: 20px 0 0 0;
+	width: 773px;
+	height: 300px;
+	position: relative;
+	text-align: center;
+}
+
+#horizontal_carousel .container {
+	height: 300px;
+	width: 773px;
+	margin: auto;
+	overflow: hidden;
+	position: absolute;
+	top: 50px;
+}
+
+#horizontal_carousel ul {
+	border: 0 none;
+	position: relative;
+	height: 300px;
+	width: 100000px;
+}
+
+#horizontal_carousel ul li {
+	float: left;
+	text-align: center;
+	width: 773px;
+	list-style: none;
+}
+
+.slide {
+    float: left;
+	text-align: center;
+    width: 600px;
+    height: 350px;
+}
+
+#carousel_buttons {
+	margin: auto;
+	clear: both;
+	width: 50px;
+}
+
+.next_button {
+	background-color: black;
+	background-image: url("/images/button_right.png");
+	background-repeat: no-repeat;
+	height: 20px;
+	width: 20px;
+	float: right;
+}
+
+.next_button_over {
+	background-color: black;
+	background-image: url("/images/button_right_over.png");
+	background-repeat: no-repeat;
+	height: 20px;
+	width: 20px;
+	float: right;
+}
+
+.next_button_disabled {
+	background-color: black;
+	background-image: url("/images/button_right_disabled.png");
+	background-repeat: no-repeat;
+	height: 20px;
+	width: 20px;
+	float: right;
+}
+
+.previous_button {
+	background-color: black;
+	background-image: url("/images/button_left.png");
+	background-repeat: no-repeat;
+	height: 20px;
+	width: 20px;
+	float: left;
+}
+
+.previous_button_over {
+	background-color: black;
+	background-image: url("/images/button_left_over.png");
+	background-repeat: no-repeat;
+	height: 20px;
+	width: 20px;
+	float: left;
+}
+
+.previous_button_disabled {
+	background-color: black;
+	background-image: url("/images/button_left_disabled.png");
+	background-repeat: no-repeat;
+	height: 20px;
+	width: 20px;
+	float: left;
+}
+
+/******************************************************/
+/*************** Publications rendering ***************/
+/******************************************************/
+
+.publication-category {
+	color: #dddddd;
+	margin: 0;
+	padding: 0.5em 0 0.5em 0.5em;
+}
+
+#publications-recent-list, #publications-list {
+	margin: 0;
+	padding: 0 0 0 0.5em;
+}
+
+.publications-page {
+	clear: both;
+}
+
+.publication {
+	margin: 0;
+	padding: 0.5em 0 0.5em 0;
+	float: left;
+	width: 33.33%;
+}
+
+/**************************************************/
+/*************** Contacts rendering ***************/
+/**************************************************/
+
+
+.title {
+	color: #dddddd;
+	margin: 0;
+	padding: 0;
+}
+
+.subtitle {
+	color: #999999;
+	margin: 0;
+	padding: 0 0 0 2em;
+}
+
+#contacts {
+	margin: 0;
+	padding: 0.5em;
+}
+
+#contacts #descriptions {
+	margin: 0;
+	padding: 2em 0 0 0;
+}
+
+#contacts #descriptions p {
+	text-indent: 0.5em;
+}
+
+#contacts #informations {
+	padding: 4em 0 0 0;
+	text-align: center;
+}
+
+#contacts #informations p {
+	padding: 0.5em 0 0 0;
+	color: #999999;
+	text-align: center;
+}

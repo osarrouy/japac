@@ -1,0 +1,12 @@
+<% project = list_item %>
+<% project_counter = list_item_counter %>
+
+<% if list_item_counter == ((Project.count)/2).to_i %>
+	</td>
+	<td>
+<% end %>
+
+<p class="project-item">
+		<%= link_to project.city.name, { :action => 'show', :id => project.id } -%>
+</p>
+

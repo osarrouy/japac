@@ -1,0 +1,38 @@
+<% project = new %>
+
+<div class="form">
+	<% form_for [:admin, project, ProjectPhoto.new],
+				:html => {
+					:target => 'frame',
+					:multipart => true,
+					:onsubmit => "Element.show('spinner')" } do |f| -%>
+
+		<% unless @project_photo.errors.empty? %>
+		<div class="form-errors">
+			<div class="errors">
+				Il existe des erreurs dans le formulaire :
+				<ul>
+				  <% @project_photo.errors.each do |attribut, message| %>
+					<li><%= message %></li>
+				  <% end %>
+				</ul>
+			</div>
+		</div>
+		<% end %>
+
+		<div class="form-entries">
+			<p><%= f.hidden_field :project_id, :value => project.id %></p>
+			<p><%= f.label :uploaded_data, 'Image :' %><%= f.file_field :uploaded_data %></p>
+		</div>
+		<%= render :partial => 'admin/separators/separator_thin' %>
+		<div class="form-buttons">
+			<%= image_tag 'spinner.gif', :id => 'spinner', :style => 'display: none' %>
+			<p><%= button_to_function 'Annuler' do |page|
+				 	page.replace_html "project-photo-form", ''
+				end %>
+				<%= f.submit "Enregistrer" %></p>
+			<hr class="spacer">
+		</div>
+	<% end %>
+	<%= render :partial => 'admin/separators/separator_thin' %>
+</div>

@@ -1,0 +1,14 @@
+<% @hd_title = @project.city.name_with_department + ", " + @project.name %>
+
+<div id="project">
+	<div id="project-photo-wide">
+		<%= image_tag @project.project_photos[0].public_filename unless @project.project_photos.blank? %>
+	</div>
+	<div id="project-photos-list">
+		<% @project.project_photos.each do |photo| %>
+			<%= link_to_remote image_tag(photo.public_filename(:thumb)), :url => project_photo_path(photo), :method => :get %>
+		<% end %>
+		<%= link_to_remote image_tag('informations.png'), :url => show_informations_project_path(@project), :method => :get %>
+		<div class="spacer-div"></div>
+	</div>
+</div>

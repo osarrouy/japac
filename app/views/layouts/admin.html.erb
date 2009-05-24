@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+  <title>Portail d'administration du site web japac</title>
+  	<%= stylesheet_link_tag 'admin' %>
+	<%= stylesheet_link_tag 'lightwindow' %>
+	<%= javascript_include_tag :all %>
+	<%= textile_editor_support %>
+</head>
+<body>
+	<div id="hd">
+
+		<div id="flash">
+				<%= h(flash[:notice]) %>
+		</div>
+		<%= update_page_tag do |page|
+				if !flash[:notice].blank?
+					page.visual_effect :fade, 'flash', :duration => 4
+				else
+					page.hide 'flash';
+				end
+		end %>
+		
+	<div id="menu">
+		<%= link_to "logout", logout_path, :id => "logout" %>
+		<ul>
+			<li><%= link_to 'Actualités', admin_events_path,
+						:class => controller.controller_name == 'events'  ? 'active' : 'inactive' -%>/</li>
+			<li><%= link_to 'Références', admin_references_path,
+						:class => controller.controller_name == 'references'  ? 'active' : 'inactive' -%>/</li>
+			<li><%= link_to 'Publications', admin_publications_path,
+						:class => controller.controller_name == 'publications'  ? 'active' : 'inactive' -%>/</li>
+			<li><%= link_to 'Utilisateurs', admin_users_path,
+						:class => controller.controller_name == 'users'  ? 'active' : 'inactive' -%>/</li>
+			<li><%= link_to 'Contacts', admin_contact_path,
+						:class => controller.controller_name == 'contacts'  ? 'active' : 'inactive' -%></li>
+		</ul>
+		
+	</div>
+	
+	</div>
+
+	<div id="bd">
+		<%= yield  %>
+	</div>
+
+	<div id="ft">
+		Powered by Olivier Sarrouy
+	</div>
+
+</body>
+</html>

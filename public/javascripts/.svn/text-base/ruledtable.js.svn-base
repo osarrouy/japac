@@ -1,0 +1,44 @@
+/*
+  ruledtable.js
+  Copyright 2006-2007, John W. Long
+  Licensed under the MIT License.
+*/
+
+var RuledTable = Class.create();
+RuledTable.prototype = {
+  
+  initialize: function(element_id, options) {
+    var table = $(element_id);
+    var rows = table.getElementsByTagName('tr');
+    if (options) this.autoClick = options['autoClick'];
+    for (var i = 0; i < rows.length; i++) {
+      this.setupRow(rows[i]);
+    }
+  },
+  
+  onMouseOverRow: function(event) {
+    // Element.addClassName(this, 'highlight');
+    this.className = this.className.replace(/\s*\bhighlight\b|$/, ' highlight'); // faster than the above
+  },
+  
+  onClickRow: function(event) {
+    var row = Event.findElement(event, 'tr');
+    window.location = row.down('a').href;
+  },
+  
+  onMouseOutRow: function(event) {
+    // Element.removeClassName(this, 'highlight');
+    this.className = this.className.replace(/\s*\bhighlight\b\s*/, ' '); // faster than the above
+  },
+  
+  setupRow: function(row) {
+    Event.observe(row, 'mouseover', this.onMouseOverRow.bindAsEventListener(row));
+    Event.observe(row, 'mouseout', this.onMouseOutRow.bindAsEventListener(row));
+    if (this.autoClick) {
+      Event.observe(row, 'click', this.onClickRow.bindAsEventListener(row), false);
+      row.style.cursor = 'pointer';
+    }
+    if (this.onRowSetup) this.onRowSetup(row);
+  }
+  
+};

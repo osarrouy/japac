@@ -1,0 +1,49 @@
+<%= render :partial => 'admin/separators/separator_thick' %>
+<div id="submenu">
+	<h4 class="title">Modification d'une publication</h4>
+	<ul>
+		<li><%= link_to 'Retourner à la liste des publications', admin_publications_path %>/</li>
+		<li><%= link_to 'Supprimer', admin_publication_path(@publication), :confirm => 'Êtes-vous sûr de vouloir supprimer cette publication ?', :method => :delete %></li>
+	</ul>
+	<hr class="spacer"/>
+</div>
+<%= render :partial => 'admin/separators/separator_thick' %>
+
+
+<div class="form">
+	
+	<% form_for [:admin, @publication], :html => {:method => :put} do |f| -%>
+	
+		<% unless @publication.errors.empty? %>
+		<div class="form-errors">
+			Il existe des erreurs dans le formulaire :
+			<ul>
+			  <% @publication.errors.each do |attribut, message| %>
+				<li><%= message %></li>
+			  <% end %>
+			</ul>
+		</div>
+		<% end %>
+	
+		<div class="form-entries">
+			<p><%= f.label :name, 'Nom :' %><%= f.text_field :name %></p>
+			<p>
+				<%= f.label :description, 'Description :' %>
+				<%= f.text_area :description %>
+			</p>
+			<p>
+				<%= f.label :date, 'Date de parution :' %>
+				<%= date_select 'publication', 'date', :order => [:day, :month, :year], :start_year => 2000, :discard_day => true %>
+			</p>
+		</div>
+	
+		<%= render :partial => 'admin/separators/separator_thin' %>
+		
+		<div class="form-buttons">
+			<p><%= f.submit "Enregistrer" %></p>
+		</div>
+
+		
+	<% end %>
+	
+</div>

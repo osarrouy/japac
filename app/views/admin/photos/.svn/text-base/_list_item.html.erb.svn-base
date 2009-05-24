@@ -1,0 +1,16 @@
+<% photo = list_item %>
+<% photo_counter = list_item_counter %>
+
+<div class="<%= photo_counter.even?  ? 'list-item-even' : 'list-item-odd' %>" id="project-photo-<%=photo.id%>">
+	
+	<div class="project-photo-content">
+		<a href="<%= photo.public_filename %>"><%= image_tag photo.public_filename(:thumb) %></a>
+	</div>
+	
+	<div class="links">
+		<%= link_to_remote 'Supprimer',	:confirm => 'Êtes-vous sûr de vouloir supprimer cette photo ?',
+										:url =>  admin_project_photo_path(photo),
+										:method => :delete %>
+	</div>
+
+</div>

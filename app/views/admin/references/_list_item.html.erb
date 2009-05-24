@@ -1,0 +1,21 @@
+<% reference = list_item %>
+<% reference_counter = list_item_counter %>
+
+<div class="<%= reference_counter.even? ? 'list_item_even' : 'list_item_odd' %>">
+
+	<div class="top_links">
+    	<%= link_to 'Modifier', edit_admin_reference_path(reference) %> |
+    	<%= link_to 'Supprimer', admin_reference_path(reference), :method => :delete,
+			:confirm => 'Êtes-vous sûr de vouloir supprimer ce projet ?' %>
+	</div>
+
+	<div>
+		<h4><%= reference.location.name %>, <%= reference.name -%></h4>
+		<h5><%= reference.size %> m2</h5>
+		<div class="photos_list">
+			<%= render :partial => "admin/photos/showing_list", :object => reference %>
+		</div>
+	</div>
+	
+
+</div>	

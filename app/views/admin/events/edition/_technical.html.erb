@@ -1,0 +1,49 @@
+<%= link_to_remote 'Annuler', :url => technical_admin_event_path(@event, :js),
+	:method => :get, :update => 'technical', :html => { :class => 'top_links' } %>
+
+<h3>Informations techniques</h3>
+
+<%= render :partial => 'admin/separators/separator_thick' %>
+
+<div class="form">
+	
+	<% remote_form_for [:admin, @event], :url => update_technical_admin_event_path(@event, :js),
+		:html => { :method => :put }, :update => 'technical' do |f| %>
+
+		<% unless @event.errors.empty? %>
+			<div class="form-errors">
+				Il existe des erreurs dans le formulaire :
+				<ul>
+					<% @event.errors.each do |attribut, message| %>
+						<li><%= message -%></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+
+		<div class="form-entries">
+			<p>
+				<%= f.label :column_left, 'Colonne de gauche :' -%>
+				<div class="textile"><%= textile_editor 'event', 'column_left'-%></div>
+			</p>
+			<%= render :partial => "admin/separators/separator_thin" %>
+			<p>
+				<%= f.label :column_center, 'Colonne du centre :' -%>
+				<div class="textile"><%= textile_editor 'event', 'column_center'-%></div>
+			</p>
+			<%= render :partial => "admin/separators/separator_thin" %>
+			<p>
+				<%= f.label :column_right, 'Colonne de droite :' -%>
+				<div class="textile"><%= textile_editor 'event', 'column_right'-%></div>
+			</p>
+		</div>
+
+		<div class="form-buttons">
+			<p><%= f.submit "Enregistrer" %></p>
+		</div>
+		
+		<%= textile_editor_initialize -%>
+	
+	<% end %>
+
+</div>

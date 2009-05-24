@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/japac/!svn/ver/2/trunk/app/views/admin/project_photos
+END
+destroy.js.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/japac/!svn/ver/2/trunk/app/views/admin/project_photos/destroy.js.rjs
+END
+new.js.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/japac/!svn/ver/2/trunk/app/views/admin/project_photos/new.js.rjs
+END
+_list_item.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/japac/!svn/ver/2/trunk/app/views/admin/project_photos/_list_item.html.erb
+END
+_new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/japac/!svn/ver/2/trunk/app/views/admin/project_photos/_new.html.erb
+END

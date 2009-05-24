@@ -1,0 +1,13 @@
+<%= render :partial => 'admin/separators/separator_thick' %>
+<div id="submenu">
+	<h4 class="title">Liste des publications</h4>
+	<ul>
+		<li><%= link_to 'Nouvelle publication', new_admin_publication_path %></li>
+	</ul>
+	<hr class="spacer"/>
+</div>
+<%= render :partial => 'admin/separators/separator_thick' %>
+	
+<div id="publications-list">
+	<%= render :partial => 'list_item', :collection => @publications %>
+</div>

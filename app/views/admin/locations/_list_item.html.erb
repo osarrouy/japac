@@ -1,0 +1,17 @@
+<% city = list_item %>
+<% city_counter = list_item_counter %>
+<div class="<%= city_counter.even? ? 'list-item-even' : 'list-item-odd' %>">
+	<h4>
+		<%= city.name %>
+	</h4>
+		<%= city.department %>
+	<p>
+
+	<div class="links">
+		<%= link_to_remote 'Modifier', :url => edit_admin_city_path(city), :method => :get %> |
+    	<%= link_to_remote 'Supprimer',
+    		:url => admin_city_path(city),
+    		:confirm => 'Êtes-vous sûr de vouloir supprimer cette ville ? Tous les projets rattachés à cette ville seront supprimés',
+    		:method => :delete %>
+    </div>
+</div>

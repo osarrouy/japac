@@ -1,0 +1,65 @@
+<%= render :partial => 'admin/separators/separator_thick' %>
+<div id="submenu">
+
+	<h4 class="title">Création d'un projet</h4>
+	<ul>
+		<li><%= link_to 'Retourner à la liste des projets', admin_projects_path %></li>
+	</ul>
+	<hr class="spacer"/>
+
+</div>
+<%= render :partial => 'admin/separators/separator_thick' %>
+
+<div id="city-form">
+</div>
+
+<div class="form">
+
+	<% form_for [:admin, @project] , :html => {:method => :post} do |f| %>
+
+		<% unless @project.errors.empty? %>
+		<div class="form-errors">
+			Il existe des erreurs dans le formulaire :
+			<ul>
+			  <% @project.errors.each do |attribut, message| %>
+				<li><%= message %></li>
+			  <% end %>
+			</ul>
+		</div>
+		<% end %>
+
+		<div class="form-entries">
+			<p><%= f.label :name, 'Nom :' %><%= f.text_field :name %></p>
+			<p id="city"><%= render :partial => 'admin/cities/cities_list' %></p>
+			<p><%= f.label :size, 'Taille :' %><%= f.text_field :size %></p>
+			<div>
+		
+				<p>
+					<%= f.label :column_left, 'Colonne de gauche :' %>
+					<%= f.text_area :column_left -%>
+				</p>
+					
+			</div>
+			<div>
+				<p>
+					<%= f.label :column_center, 'Colonne du milieu :' %>
+					<%= f.text_area :column_center -%>
+				</p>
+			</div>
+			<div>
+				<p>
+					<%= f.label :column_right, 'Colonne de droite :' %>
+					<%= f.text_area :column_right -%>
+				</p>
+			</div>
+		</div>
+		
+		<%= render :partial => 'admin/separators/separator_thin' %>
+		
+		<div class="form-buttons">
+			<p><%= f.submit "Enregistrer" %></p>
+		</div>
+	
+	<% end %>
+
+</div>

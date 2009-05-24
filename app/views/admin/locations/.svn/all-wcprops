@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/japac/!svn/ver/2/trunk/app/views/admin/cities
+END
+index.js.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/japac/!svn/ver/2/trunk/app/views/admin/cities/index.js.rjs
+END
+_index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/japac/!svn/ver/2/trunk/app/views/admin/cities/_index.html.erb
+END
+new.js.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/japac/!svn/ver/2/trunk/app/views/admin/cities/new.js.rjs
+END
+_list_item.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/japac/!svn/ver/2/trunk/app/views/admin/cities/_list_item.html.erb
+END
+_new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/japac/!svn/ver/2/trunk/app/views/admin/cities/_new.html.erb
+END
+_cities_list.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/japac/!svn/ver/2/trunk/app/views/admin/cities/_cities_list.html.erb
+END
+create.js.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/japac/!svn/ver/2/trunk/app/views/admin/cities/create.js.rjs
+END
+edit.js.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/japac/!svn/ver/2/trunk/app/views/admin/cities/edit.js.rjs
+END
+_edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/japac/!svn/ver/2/trunk/app/views/admin/cities/_edit.html.erb
+END

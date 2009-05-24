@@ -1,0 +1,15 @@
+<%= render :partial => 'admin/separators/separator_thick' %>
+
+<div id="submenu">
+	<h4 class="title">Liste des actualités</h4>
+	<ul>
+		<li><%= link_to 'Nouvelle actualité', new_admin_event_path %></li>
+	</ul>
+</div>
+
+<%= render :partial => 'admin/separators/separator_thick' %>
+	
+<div>
+	<%= render :partial => 'list_item', :collection => @events %>
+</div>
+

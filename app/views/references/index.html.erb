@@ -1,0 +1,38 @@
+<% @hd_title = "Nos références" %>
+
+<div class="tabs_wrapper">
+
+	<ul id="references_tabs" class="tabs">  
+		<li class="tab"><a href="#name">Par nom</a></li>
+		<li class="tab"><a href="#size">Par superficie</a></li>
+	   	<li class="tab"><a href="#map">Sur une carte</a></li>
+	</ul>	
+		
+	<div id="name" class="tab_content">
+		<%= render :partial => 'list_item', :collection => @references %>
+	</div>
+	
+	<div id="size" class="tab_content">
+			<%= select_tag "size", '<option value="1">Inférieur à 1000m2</option>
+			 						<option value="2">Entre 1000m2 et 2500m2</option>
+			 						<option value="3">Entre 2500m2 et 5000m2</option>
+			 						<option value="4">Supérieur à 5000m2</option>'
+			%>
+			<%= #observe_field 'size',	:update => 'size-list',
+			 				#			:url => { :controller => 'projects',
+			 				#					  :action=> 'size_form' },
+			 				#			:with => "'size=' + escape(value)"
+			%>
+
+			<div id="size-list">
+			</div>
+
+	</div>
+
+	<div id="map" class="tab_content">
+		<%= map(@references, 375) %>
+	</div>
+
+</div>
+
+<%= javascript_tag "new Control.Tabs('references_tabs')" %>

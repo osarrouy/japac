@@ -1,0 +1,52 @@
+8
+
+dir
+6
+http://osarrouy@osarrouy.svn.beanstalkapp.com/japac/trunk/vendor/plugins/svn/test
+http://osarrouy@osarrouy.svn.beanstalkapp.com/japac
+
+
+
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+36042c44-f286-48f0-866c-45e647ba95f2
+
+responds_to_parent_test.rb
+file
+
+
+
+
+2009-03-24T16:22:54.000000Z
+a421b0ff095bccefbe1de7ee97be1092
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+
+assert_select_parent_test.rb
+file
+
+
+
+
+2009-03-24T16:22:54.000000Z
+ac9d1c10f5ddd089c626610c76167b72
+2009-03-16T12:54:53.463077Z
+2
+osarrouy
+

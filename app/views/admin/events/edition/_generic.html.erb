@@ -1,0 +1,42 @@
+<%= link_to_remote 'Annuler', :url => generic_admin_event_path(@event, :js),
+		:method => :get, :update => 'generic', :html => { :class => 'top_links' } %>
+
+<h3>Informations génériques</h3>
+
+<%= render :partial => 'admin/separators/separator_thick' %>
+
+
+<div class="form">
+	
+	<% remote_form_for [:admin, @event], :url => update_generic_admin_event_path(@event, :js),
+		:html => { :method => :put }, :update => 'generic' do |f| %>
+		
+		<% unless @event.errors.empty? %>
+		<div class="form-errors">
+			Il existe des erreurs dans le formulaire :
+			<ul>
+			  <% @event.errors.each do |attribut, message| %>
+				<li><%= message %></li>
+			  <% end %>
+			</ul>
+		</div>
+		<% end %>
+		
+		<div class="form-entries">
+			<p><%= f.label :name, 'Nom :' %><%= f.text_field :name %></p>
+			<p><%= f.label :location_name, 'Nom de la location:' %><%= f.text_field :location_name %></p>
+			<p><%= f.label :reference_id, 'Référence associée :' %><%= f.collection_select :reference_id,
+					Reference.find(:all), :id, :name_with_location , { :prompt => 'Sélectionnez un projet' } %></p>
+			<p><%= f.label :date, 'Date :' %><%= date_select 'event', 'date', :order => [:day, :month, :year], 
+					:start_year => 2000, :discard_day => true %></p>
+			<p><%= f.label :kind, 'Inauguration :' %><%= f.radio_button :kind, 'inauguration' %></p>
+			<p><%= f.label :kind, 'Concours gagné :' %><%= f.radio_button :kind, 'won_contest' %></p>
+		</div>
+		
+		<div class="form-buttons">
+			<p><%= f.submit "Enregistrer" %></p>
+		</div>
+	
+	<% end %>
+
+</div>

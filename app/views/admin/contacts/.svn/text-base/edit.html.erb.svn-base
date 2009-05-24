@@ -1,0 +1,54 @@
+<%= render :partial => 'admin/separators/separator_thick' %>
+<div id="submenu">
+
+	<h4 class="title">Modification</h4>
+	<ul>
+		<li><%= link_to 'Retourner à la visualisation des contacts', admin_contact_path %></li>
+	</ul>
+	<hr class="spacer"/>
+
+</div>
+<%= render :partial => 'admin/separators/separator_thick' %>
+
+<div id="city-form">
+</div>
+
+<div class="form">
+
+	<% form_for [:admin, @contact] , :url => admin_contact_path, :html => {:method => :put} do |f| %>
+
+		<% unless @contact.errors.empty? %>
+		<div class="form-errors">
+			Il existe des erreurs dans le formulaire :
+			<ul>
+			  <% @contact.errors.each do |attribut, message| %>
+				<li><%= message %></li>
+			  <% end %>
+			</ul>
+		</div>
+		<% end %>
+
+		<div class="form-entries">
+			<h4>Equipe</h4>
+			<p><%= f.label :team_left, 'Colonne de gauche' %><%= f.text_area :team_left %></p>
+			<p><%= f.label :team_center, 'Colonne du milieu' %><%= f.text_area :team_center %></p>
+			<p><%= f.label :team_right, 'Colonne de droite' %><%= f.text_area :team_right %></p>
+			<%= render :partial => 'admin/separators/separator_thin' %>
+			<h4>Matériel</h4>
+			<p><%= f.label :hardware_left, 'Colonne de gauche' %><%= f.text_area :hardware_left %></p>
+			<p><%= f.label :hardware_center, 'Colonne du milieu' %><%= f.text_area :hardware_center %></p>
+			<p><%= f.label :hardware_right, 'Colonne de droite' %><%= f.text_area :hardware_right %></p>
+			<%= render :partial => 'admin/separators/separator_thin' %>
+			<h4>Contact</h4>
+			<p><%= f.label :contact, 'Contact' %><%= f.text_area :contact %></p>
+		</div>
+		
+		<%= render :partial => 'admin/separators/separator_thin' %>
+		
+		<div class="form-buttons">
+			<p><%= f.submit "Enregistrer" %></p>
+		</div>
+	
+	<% end %>
+
+</div>

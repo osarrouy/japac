@@ -1,0 +1,54 @@
+<%= render :partial => 'admin/separators/separator_thick' %>
+<div id="submenu">
+
+	<h4 class="title">Contacts</h4>
+	<ul>
+		<li><%= link_to 'Modifier', edit_admin_contact_path %></li>
+	</ul>
+	<hr class="spacer"/>
+</div>
+
+<%= render :partial => 'admin/separators/separator_thick' %>
+
+<div class="contacts">
+	
+	<div class="contact-category">
+		
+		<div class="contact-column">
+			<h2>Equipe</h2>
+			<%= render :partial => 'admin/separators/separator_thin' %>
+			<h4>Colonne de gauche</h4>
+			<%= @contact.team_left %>
+			<%= render :partial => 'admin/separators/separator_thin' %>
+			<h4>Colonne du mileu</h4>
+			<%= @contact.team_center %>
+			<%= render :partial => 'admin/separators/separator_thin' %>
+			<h4>Colonne de droite</h4>
+			<%= @contact.team_right %>
+		</div>
+		
+		<%= render :partial => 'admin/separators/separator_thick' %>
+
+		<div class="contact-column">
+			<h2>Matériel</h2>
+			<%= render :partial => 'admin/separators/separator_thin' %>
+			<h4>Colonne de gauche</h4>
+			<%= @contact.hardware_left %>
+			<%= render :partial => 'admin/separators/separator_thin' %>
+			<h4>Colonne du mileu</h4>
+			<%= @contact.hardware_center %>
+			<%= render :partial => 'admin/separators/separator_thin' %>
+			<h4>Colonne de droite</h4>
+			<%= @contact.hardware_right %>
+		</div>
+		
+		<%= render :partial => 'admin/separators/separator_thick' %>
+		
+		<div>
+			<h2>Contact</h2>
+			<%= @contact.contact %>
+		</div>
+		
+	</div>
+	
+</div>

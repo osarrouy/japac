@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/japac/!svn/ver/2/trunk/db/migrate
+END
+20081022194440_add_description_to_publications.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/japac/!svn/ver/2/trunk/db/migrate/20081022194440_add_description_to_publications.rb
+END
+20080925171702_create_cities.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/japac/!svn/ver/2/trunk/db/migrate/20080925171702_create_cities.rb
+END
+20081111140954_delete_name_from_event_thumbnails.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/japac/!svn/ver/2/trunk/db/migrate/20081111140954_delete_name_from_event_thumbnails.rb
+END
+20081218181925_create_contacts.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/japac/!svn/ver/2/trunk/db/migrate/20081218181925_create_contacts.rb
+END
+20081108210040_change_description_column_names_in_projects.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/japac/!svn/ver/2/trunk/db/migrate/20081108210040_change_description_column_names_in_projects.rb
+END
+20081111140833_delete_name_from_event_photos.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/japac/!svn/ver/2/trunk/db/migrate/20081111140833_delete_name_from_event_photos.rb
+END
+20080925171855_create_city_id_to_project.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/japac/!svn/ver/2/trunk/db/migrate/20080925171855_create_city_id_to_project.rb
+END
+20080928151148_modify_project_informations.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/japac/!svn/ver/2/trunk/db/migrate/20080928151148_modify_project_informations.rb
+END
+20081001203123_change_parution_date_name.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/japac/!svn/ver/2/trunk/db/migrate/20081001203123_change_parution_date_name.rb
+END
+20081001193747_create_publications.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/japac/!svn/ver/2/trunk/db/migrate/20081001193747_create_publications.rb
+END
+20080919134243_create_projects.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/japac/!svn/ver/2/trunk/db/migrate/20080919134243_create_projects.rb
+END
+20081110160522_create_event_photos.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/japac/!svn/ver/2/trunk/db/migrate/20081110160522_create_event_photos.rb
+END
+20081112183719_change_check_box_in_radio_button_for_events.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/japac/!svn/ver/2/trunk/db/migrate/20081112183719_change_check_box_in_radio_button_for_events.rb
+END
+20081109205005_create_news.rb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/japac/!svn/ver/2/trunk/db/migrate/20081109205005_create_news.rb
+END
+20080921145544_create_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/japac/!svn/ver/2/trunk/db/migrate/20080921145544_create_users.rb
+END
+20080919161509_delete_acts_as_attachment_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/japac/!svn/ver/2/trunk/db/migrate/20080919161509_delete_acts_as_attachment_table.rb
+END
+20080919193930_add_project_id_to_project_photos.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/japac/!svn/ver/2/trunk/db/migrate/20080919193930_add_project_id_to_project_photos.rb
+END
+20080919134812_create_project_photos.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/japac/!svn/ver/2/trunk/db/migrate/20080919134812_create_project_photos.rb
+END
+20081111132154_create_event_thumbnail.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/japac/!svn/ver/2/trunk/db/migrate/20081111132154_create_event_thumbnail.rb
+END
+20081001211741_integrate_document_to_publication.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/japac/!svn/ver/2/trunk/db/migrate/20081001211741_integrate_document_to_publication.rb
+END
+20080919162533_create_table_project_photos_fu.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/japac/!svn/ver/2/trunk/db/migrate/20080919162533_create_table_project_photos_fu.rb
+END
+20081111140625_delete_name_from_project_photos.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/japac/!svn/ver/2/trunk/db/migrate/20081111140625_delete_name_from_project_photos.rb
+END
+20081229193449_add_project_to_event.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/japac/!svn/ver/2/trunk/db/migrate/20081229193449_add_project_to_event.rb
+END
+20081110135855_replace_news_table_by_events_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/japac/!svn/ver/2/trunk/db/migrate/20081110135855_replace_news_table_by_events_table.rb
+END
+20081112115339_delete_event_thumbnail.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/japac/!svn/ver/2/trunk/db/migrate/20081112115339_delete_event_thumbnail.rb
+END
+20081112200919_change_type_to_kind_in_events.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/japac/!svn/ver/2/trunk/db/migrate/20081112200919_change_type_to_kind_in_events.rb
+END
+20081001205232_create_parution_document.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/japac/!svn/ver/2/trunk/db/migrate/20081001205232_create_parution_document.rb
+END
+20081229201601_add_size_to_project.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/japac/!svn/ver/2/trunk/db/migrate/20081229201601_add_size_to_project.rb
+END
+20081111225949_delete_photos_id_to_events.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/japac/!svn/ver/2/trunk/db/migrate/20081111225949_delete_photos_id_to_events.rb
+END

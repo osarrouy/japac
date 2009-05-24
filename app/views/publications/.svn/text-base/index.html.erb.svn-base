@@ -1,0 +1,18 @@
+<% @hd_title = "Les publications sur japac" %>
+
+<div id="publications">
+	
+	<ul id="publications-tabs" class="tabs">
+		<li class="tab"><a href="#recent-publications">Publications récentes</a></li>
+		<li class="tab"><a href="#all-publications">Toutes les parutions</a></li>
+	</ul>  
+	<div id="recent-publications" class="tab-content">
+		<%= render_partial_collection 'list_item', Publication.recent %>
+	</div>  
+	<div id="all-publications" class="tab-content">
+		<%= render_partial_collection 'list_item', @publications %>
+	</div>
+	
+	<%= javascript_tag "new Control.Tabs('publications-tabs');" %>
+
+</div>
