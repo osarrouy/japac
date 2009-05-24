@@ -22,5 +22,10 @@ test:
 production:
   adapter: mysql
   database: japacfr_japac
-  username: japacfr_japac
-  password: $piscine$vlp$
+  encoding: utf8
+  reconnect: false
+  #username: japacfr_japac
+  #password: $piscine$vlp$
+  username: root
+  password: barback
+  socket: /tmp/mysql.sock
