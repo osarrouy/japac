@@ -308,6 +308,31 @@ ul#menu li a.menu_link:hover {
 	background-color: #787878;
 }
 
+.city_names {
+  text-align: center;
+  width: 100%;
+}
+
+#name div {
+  text-align: center;
+  width: 100%;
+}
+
+#name select {
+  margin: 0.5em;
+}
+
+.city_names_cell {
+  width: 50%;
+}
+
+.city_names_cell img {
+  background-color: #333333;
+	border: 1px solid #808080;
+	padding: 3px;
+	position: absolute;
+}
+
 /******************************************************/
 /*************** Publications rendering ***************/
 /******************************************************/

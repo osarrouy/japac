@@ -3,10 +3,24 @@ class ReferencesController < ApplicationController
   layout 'public'
   
   def index
-    @references = Reference.find(:all, :include => [ :location, :photos ], :order => "locations.name")
+    @references = []
+    if params[:size]
+      if params[:size] == "0"
+    		@references = Reference.find(:all, :include => [ :location, :photos ], :order => "locations.name")
+    	elsif params[:size] == "1"
+    		@references = Reference.find(:all, :conditions => [ "size <= 2500" ], :order => "locations.name")
+    	elsif params[:size] == "2"
+    		@references = Reference.find(:all, :conditions => [ "size > 2500 and size < 5000" ], :order => "locations.name")
+    	elsif params[:size] == "3"
+    		@references = Reference.find(:all, :conditions => [ "size >= 5000" ], :order => "locations.name")
+    	end
+    else
+      @references = Reference.find(:all, :include => [ :location, :photos ], :order => "locations.name")
+    end
     
     respond_to do |format|
       format.html
+      format.js { render :partial => 'names' }
     end
   end
   

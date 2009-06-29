@@ -23,18 +23,25 @@ module ApplicationHelper
   def map(references, height)
     
     key = 'ABQIAAAANnki5pfM3DRXmD3uA5iY9xRVC8rEueqz8MRIlePQd40iPbt42BT8iIWUz-T33DhOgzKRiwQNTEjbDg'
+    key = 'ABQIAAAANnki5pfM3DRXmD3uA5iY9xRVC8rEueqz8MRIlePQd40iPbt42BT8iIWUz-T33DhOgzKRiwQNTEjbDg'
+    
 
     gmap_url = "http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=#{key}"
 
     code_2 = "function initializeMap() {"
     code_2 << "if(GBrowserIsCompatible()) {"
     code_2 << "var point;"
+    code_2 << "var marker;"
     code_2 << "var map = new GMap2(document.getElementById('map_canvas'));"
     code_2 << "map.setCenter(new GLatLng(40, 0), 1);"
     references.each do |ref|
      link = link_to( "<h4>" + ref.location.name + ", " + ref.name , reference_path(ref))
      code_2 << "point = new GLatLng(#{ref.location.lat}, #{ref.location.lng});"
-     code_2 << "map.addOverlay(createMarker(point, '#{link}'));"
+     code_2 << "marker = createMarker(point, '#{link}');"
+     code_2 << "GEvent.addListener(marker, 'mouseover', function() { this.openInfoWindowHtml('<h4>" + ref.location.name + ", " + ref.name + "</h4>'); });"
+     code_2 << "GEvent.addListener(marker, 'mouseout', function() { this.closeInfoWindow(); });"
+     code_2 << "GEvent.addListener(marker, 'click', function(event) { window.location = '" + reference_url(ref) + "'});"
+     code_2 << "map.addOverlay(marker);"
     end
     code_2 << "map.setUIToDefault(); }}"
     

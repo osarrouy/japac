@@ -1,23 +1,33 @@
 <% reference = list_item %>
 <% reference_counter = list_item_counter %>
 
-<table class="item <%= reference_counter.even? ? 'even' : 'odd' %>">
-	<tr>
-	<% if reference_counter.even? %>
-		<td class="item_info">
-			<%= link_to reference.name_with_location, reference_path(reference) -%>
-		</td>
-		<td class="item_photo">
-			<%= link_to(image_tag(reference.photos.first.public_filename(:thumb)), reference_path(reference)) unless reference.photos.blank? %>
-		</td>
-	<% else %>
-		<td class="item_photo">
-			<%= link_to(image_tag(reference.photos.first.public_filename(:thumb)), reference_path(reference)) unless reference.photos.blank? %>
-		</td>
-		<td class="item_info">
-			<%= link_to reference.name_with_location, reference_path(reference) -%>
-		</td>
-	<% end %>
-	</tr>
-</table>
+<% if reference_counter.even? %>
+  </tr>
+  <tr>
+  <td class="city_names_cell">
+    <%= link_to "#{reference.location.name}", reference_path(reference), :id => "#{reference.id}_link"  %>
+    <%= image_tag(reference.photos.first.public_filename(:thumb), :id => "#{reference.id}_thumb", :class => "floating_thumb", :style => "display:none;") unless reference.photos.blank?%>
+  </td>
+<% else %>
+  <td class="city_names_cell">
+    <%= link_to "#{reference.location.name}", reference_path(reference), :id => "#{reference.id}_link" %>
+    <%= image_tag(reference.photos.first.public_filename(:thumb), :id => "#{reference.id}_thumb", :class => "floating_thumb", :style => "display:none;") unless reference.photos.blank?%>
+  </td>
+<% end %>
 
+<% unless reference.photos.blank? %>
+  <script type="text/javascript">
+    $("<%= reference.id %>_link").observe('mouseover', function(event) {
+      mouseX = Event.pointerX(event);
+      mouseY = Event.pointerY(event);
+      $("<%= reference.id %>_thumb").setStyle({ top: mouseY, left: mouseX});
+      $("<%= reference.id %>_thumb").show();
+    });    
+    $("<%= reference.id %>_link").observe('mouseout', function(event) {
+      $("<%= reference.id %>_thumb").hide();
+    });
+  </script>
+<% end %>
+
+
+	  

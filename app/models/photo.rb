@@ -27,15 +27,13 @@ class Photo < ActiveRecord::Base
   end
                     
   def self.random(type)
+    photos = []
     if(type == :event)
-      events = Event.find(:all, :include => [ :photos ]).delete_if { |e| e.photos.nil? }
-      photos = events.map { |e| e.photos.first }
-      photos.rand
+      photos = Photo.find(:all, :conditions => [ "attachable_type = ?", 'Event' ])
     elsif(type == :reference)
-      references = Reference.find(:all, :include => [ :photos ]).delete_if { |e| e.photos.nil? }
-      photos = references.map { |e| e.photos.first }
-      photos.rand
+      photos = Photo.find(:all, :conditions => [ "attachable_type = ?", 'Reference' ])
     end
+    photos.rand
   end
 
 end

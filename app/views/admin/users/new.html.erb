@@ -1,16 +1,24 @@
-<%= error_messages_for :user %>
-<% form_for :user, :url => admin_users_path do |f| -%>
-<p><label for="login">Login</label><br/>
-<%= f.text_field :login %></p>
-
-<p><label for="email">Email</label><br/>
-<%= f.text_field :email %></p>
-
-<p><label for="password">Password</label><br/>
-<%= f.password_field :password %></p>
-
-<p><label for="password_confirmation">Confirm Password</label><br/>
-<%= f.password_field :password_confirmation %></p>
-
-<p><%= submit_tag 'Sign up' %></p>
-<% end -%>
+<div class="form">
+  <% unless @user.errors.empty? %>
+	<div class="form-errors">
+		Il existe des erreurs dans le formulaire :
+		<ul>
+		  <% @user.errors.each do |attribut, message| %>
+			<li><%= message %></li>
+		  <% end %>
+		</ul>
+	</div>
+	<% end %>
+	
+	<% form_for [:admin, @user] do |f| -%>
+	  <div class="form-entries">
+      <p><%= f.label :login, 'Login :' %><%= f.text_field :login %></p>
+      <p><%= f.label :email, 'Email :' %><%= f.text_field :email %></p>
+      <p><%= f.label :password, 'Password :' %><%= f.password_field :password %></p>
+      <p><%= f.label :password_confirmation, 'Confirmation :' %><%= f.password_field :password_confirmation %></p>
+    </div>
+    <div class="form-buttons">
+      <p><%= submit_tag 'Sign up' %></p>
+    </end>
+  <% end -%>
+</div>
