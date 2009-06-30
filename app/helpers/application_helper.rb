@@ -33,7 +33,7 @@ module ApplicationHelper
     code_2 << "var point;"
     code_2 << "var marker;"
     code_2 << "var map = new GMap2(document.getElementById('map_canvas'));"
-    code_2 << "map.setCenter(new GLatLng(40, 0), 1);"
+    code_2 << "map.setCenter(new GLatLng(47, 3), 5);"
     references.each do |ref|
      link = link_to( "<h4>" + ref.location.name + ", " + ref.name , reference_path(ref))
      code_2 << "point = new GLatLng(#{ref.location.lat}, #{ref.location.lng});"
